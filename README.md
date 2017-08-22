@@ -1,17 +1,23 @@
+
 # README
 
-This README would normally document whatever steps are necessary to get the
+# workflow-api
+Building a BPMN workflow API for rails 5.1
+
+
+Application in progress.
+This README will document all necessary steps to get the
 application up and running.
 
-Things you may want to cover:
+* Ruby version: 2.3.3
 
-* Ruby version
+* Rails version: 5.1
 
-* System dependencies
+* OS: Linux Mint 17.2
+
+* Database: MySQL 5.7
 
 * Configuration
-
-* Database creation
 
 * Database initialization
 
@@ -20,5 +26,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
