@@ -16,6 +16,10 @@ application up and running.
 * OS: Linux Mint 17.2
 
 * Database: MySQL 5.7
+	
+	instalation:
+	https://www.howtoforge.com/tutorial/how-to-install-mysql-57-on-linux-centos-and-ubuntu/
+
 
 * Configuration
 
