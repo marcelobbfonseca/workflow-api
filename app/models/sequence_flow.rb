@@ -1,0 +1,2 @@
+class SequenceFlow < ApplicationRecord
+end
