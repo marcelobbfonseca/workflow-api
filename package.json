@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "@rails/webpacker": "^3.0.0"
+    "@rails/webpacker": "^3.0.0",
+    "bpmn-js": "^0.22.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.7.1"
