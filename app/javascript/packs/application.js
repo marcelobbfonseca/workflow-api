@@ -6,5 +6,28 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+// import { FunctionName, AnotherFunction} from 'path/file'
+// import * as helpers from 'path/file'
+// import MyJsFile from 'my_js_file';
 
-console.log('Hello World from Webpacker')
+import JQuery from 'jquery'
+import Browserify from 'browserify'
+import BPMNJs from 'bpmn-js';
+
+import modelerIndex from '../bpmn_stuff/modeler_index.js';
+console.log('Hello World from marcelo')
+console.log('./')
+
+var BpmnViewer = require('bpmn-js');
+
+var xml; // my BPMN 2.0 xml
+var viewer = new BpmnViewer({ container: '#canvas' });
+
+viewer.importXML(xml, function(err) {
+
+    if (err) {
+        console.log('error rendering', err);
+    } else {
+        console.log('rendered');
+    }
+});

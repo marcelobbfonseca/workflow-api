@@ -1,9 +1,14 @@
 {
   "dependencies": {
     "@rails/webpacker": "^3.0.0",
-    "bpmn-js": "^0.22.0"
+    "bpmn-js": "^0.22.0",
+    "browserify": "^14.4.0",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.7.1"
+  },
+  "scripts": {
+    "dev": "./bin/webpack-dev-server"
   }
 }

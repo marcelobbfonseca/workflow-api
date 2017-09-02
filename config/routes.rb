@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/modeler' => 'bpmn#modeler'
+  get '/viewer' => 'bpmn#viewer'
   resources :sequence_flows
   resources :tasks
   resources :diagrams
