@@ -11,12 +11,12 @@
 // import MyJsFile from 'my_js_file';
 
 import JQuery from 'jquery'
+import Fs from 'fs'
 import Browserify from 'browserify'
-import BPMNJs from 'bpmn-js';
+import BPMNJs from 'bpmn-js'
 
 import modelerIndex from '../bpmn_stuff/modeler_index.js';
-console.log('Hello World from marcelo')
-console.log('./')
+console.log('Hello World from webpacker')
 
 var BpmnViewer = require('bpmn-js');
 
