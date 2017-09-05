@@ -1,9 +1,11 @@
 'use strict';
-console.log('oieee carreguei');
 
+import $ from 'jquery';
+import BpmnModeler from 'bpmn-js/lib/Modeler';
+import fs from 'browserfs';
 
-var $ = require('jquery'), BpmnModeler = require('bpmn-js/lib/Modeler');
-var fs = require('fs');
+//var $ = require('jquery'), BpmnModeler = require('bpmn-js/lib/Modeler');
+//var fs = require('fs');
 var container = $('#js-drop-zone');
 
 var canvas = $('#js-canvas');

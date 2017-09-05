@@ -2,9 +2,11 @@
   "dependencies": {
     "@rails/webpacker": "^3.0.0",
     "bpmn-js": "^0.22.0",
+    "browserfs": "^1.4.3",
     "browserify": "^14.4.0",
     "fs": "^0.0.1-security",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "matches-selector": "^1.2.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.7.1"

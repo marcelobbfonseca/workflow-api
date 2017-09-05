@@ -11,23 +11,9 @@
 // import MyJsFile from 'my_js_file';
 
 import JQuery from 'jquery'
-import Fs from 'fs'
-import Browserify from 'browserify'
+//import fs from 'fs.realpath'
+//import Browserify from 'browserify'
 import BPMNJs from 'bpmn-js'
-
+import fs from 'browserfs'
 import modelerIndex from '../bpmn_stuff/modeler_index.js';
 console.log('Hello World from webpacker')
-
-var BpmnViewer = require('bpmn-js');
-
-var xml; // my BPMN 2.0 xml
-var viewer = new BpmnViewer({ container: '#canvas' });
-
-viewer.importXML(xml, function(err) {
-
-    if (err) {
-        console.log('error rendering', err);
-    } else {
-        console.log('rendered');
-    }
-});
