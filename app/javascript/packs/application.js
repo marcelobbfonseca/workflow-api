@@ -10,10 +10,8 @@
 // import * as helpers from 'path/file'
 // import MyJsFile from 'my_js_file';
 
-import JQuery from 'jquery'
-//import fs from 'fs.realpath'
-//import Browserify from 'browserify'
-import BPMNJs from 'bpmn-js'
+import $ from 'jquery'
+import BpmnModeler from 'bpmn-js'
 import fs from 'browserfs'
 import modelerIndex from '../bpmn_stuff/modeler_index.js';
 console.log('Hello World from webpacker')

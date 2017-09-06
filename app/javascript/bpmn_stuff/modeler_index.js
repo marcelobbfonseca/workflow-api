@@ -1,25 +1,25 @@
 'use strict';
 
-import $ from 'jquery';
-import BpmnModeler from 'bpmn-js/lib/Modeler';
-import fs from 'browserfs';
+//import $ from 'jquery';
+//import BpmnModeler from 'bpmn-js/lib/Modeler';
+//import fs from 'graceful-fs';
 
-//var $ = require('jquery'), BpmnModeler = require('bpmn-js/lib/Modeler');
-//var fs = require('fs');
+var $ = require('jquery'), BpmnModeler = require('bpmn-js/lib/Modeler');
+var fs = require('browserfs'); //nao ta pegando a ref certa
+
 var container = $('#js-drop-zone');
 
 var canvas = $('#js-canvas');
 
 var modeler = new BpmnModeler({ container: canvas });
 
-var newDiagramXML = fs.readFileSync(__dirname + '/../resources/newDiagram.bpmn', 'utf-8');
+//var newDiagramXML = fs.readFileSync(__dirname + '/../resources/newDiagram.bpmn', 'utf-8');
+var newDiagramXML = fs.readFileSync('bpmn-js/resources/initial.bpmn', 'utf-8'); //falha aqui. nao reconhece func
 
 function createNewDiagram() {
     openDiagram(newDiagramXML);
 }
-
 function openDiagram(xml) {
-
     modeler.importXML(xml, function(err) {
 
         if (err) {
