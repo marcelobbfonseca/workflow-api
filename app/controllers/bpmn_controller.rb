@@ -1,6 +1,7 @@
 class BpmnController < ApplicationController
   before_action :set_user_tasks, only: [:parser]
   before_action :set_bpmn, only: [:parser]
+  before_action :escape, only:[:parser]
   rescue_from  Errno::ENOENT, with: :file_not_found
 
   def modeler
@@ -12,8 +13,8 @@ class BpmnController < ApplicationController
   end
 
   def parser
-    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/processo_noticia.bpmn")) if params[:name].nil?
-    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/#{params[:name]}.bpmn")) unless params[:name].nil?
+    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/processo_noticia.bpmn")) if @name.nil?
+    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/#{@name}.bpmn")) unless @name.nil?
 
     # Get process name
     @process = doc.css('bpmn|participant').first['name']
@@ -46,10 +47,10 @@ class BpmnController < ApplicationController
   def file_not_found
     @files = Dir.entries("#{Rails.root}/bpmn/")
     respond_to do |format|
-      format.json { render json: "Process #{params[:name]} not found. Existing files:#{@files}" }
-      format.html { render json: "Process #{params[:name]} not found. Existing files:#{@files}", status: :not_found }
-
+      format.json { render json: "Process #{@name} not found. Existing files:#{@files}" }
+      format.html { render json: "Process #{@name} not found. Existing files:#{@files}", status: :not_found }
     end
+
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
@@ -57,4 +58,7 @@ class BpmnController < ApplicationController
     params.require(:bpmn).permit(:name, :process, :userTask)
   end
 
+  def escape
+    @name = params[:name].gsub(/[^0-9A-Za-z]/, '')
+  end
 end
