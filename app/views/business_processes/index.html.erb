@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Business Processes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Task</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @business_processes.each do |business_process| %>
+      <tr>
+        <td><%= business_process.name %></td>
+        <td><%= business_process.task %></td>
+        <td><%= link_to 'Show', business_process %></td>
+        <td><%= link_to 'Edit', edit_business_process_path(business_process) %></td>
+        <td><%= link_to 'Destroy', business_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Business Process', new_business_process_path %>

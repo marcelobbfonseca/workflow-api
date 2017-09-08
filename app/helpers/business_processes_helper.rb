@@ -1,0 +1,2 @@
+module BusinessProcessesHelper
+end

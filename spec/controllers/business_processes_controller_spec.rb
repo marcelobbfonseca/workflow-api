@@ -23,10 +23,10 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe DiagramsController, type: :controller do
+RSpec.describe BusinessProcessesController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Diagram. As you add validations to Diagram, be sure to
+  # BusinessProcess. As you add validations to BusinessProcess, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -38,12 +38,12 @@ RSpec.describe DiagramsController, type: :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # DiagramsController. Be sure to keep this updated too.
+  # BusinessProcessesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET #index" do
     it "returns a success response" do
-      diagram = Diagram.create! valid_attributes
+      business_process = BusinessProcess.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -51,8 +51,8 @@ RSpec.describe DiagramsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      diagram = Diagram.create! valid_attributes
-      get :show, params: {id: diagram.to_param}, session: valid_session
+      business_process = BusinessProcess.create! valid_attributes
+      get :show, params: {id: business_process.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
@@ -66,29 +66,29 @@ RSpec.describe DiagramsController, type: :controller do
 
   describe "GET #edit" do
     it "returns a success response" do
-      diagram = Diagram.create! valid_attributes
-      get :edit, params: {id: diagram.to_param}, session: valid_session
+      business_process = BusinessProcess.create! valid_attributes
+      get :edit, params: {id: business_process.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Diagram" do
+      it "creates a new BusinessProcess" do
         expect {
-          post :create, params: {diagram: valid_attributes}, session: valid_session
-        }.to change(Diagram, :count).by(1)
+          post :create, params: {business_process: valid_attributes}, session: valid_session
+        }.to change(BusinessProcess, :count).by(1)
       end
 
-      it "redirects to the created diagram" do
-        post :create, params: {diagram: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Diagram.last)
+      it "redirects to the created business_process" do
+        post :create, params: {business_process: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(BusinessProcess.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {diagram: invalid_attributes}, session: valid_session
+        post :create, params: {business_process: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end
@@ -100,41 +100,41 @@ RSpec.describe DiagramsController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested diagram" do
-        diagram = Diagram.create! valid_attributes
-        put :update, params: {id: diagram.to_param, diagram: new_attributes}, session: valid_session
-        diagram.reload
+      it "updates the requested business_process" do
+        business_process = BusinessProcess.create! valid_attributes
+        put :update, params: {id: business_process.to_param, business_process: new_attributes}, session: valid_session
+        business_process.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the diagram" do
-        diagram = Diagram.create! valid_attributes
-        put :update, params: {id: diagram.to_param, diagram: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(diagram)
+      it "redirects to the business_process" do
+        business_process = BusinessProcess.create! valid_attributes
+        put :update, params: {id: business_process.to_param, business_process: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(business_process)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        diagram = Diagram.create! valid_attributes
-        put :update, params: {id: diagram.to_param, diagram: invalid_attributes}, session: valid_session
+        business_process = BusinessProcess.create! valid_attributes
+        put :update, params: {id: business_process.to_param, business_process: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested diagram" do
-      diagram = Diagram.create! valid_attributes
+    it "destroys the requested business_process" do
+      business_process = BusinessProcess.create! valid_attributes
       expect {
-        delete :destroy, params: {id: diagram.to_param}, session: valid_session
-      }.to change(Diagram, :count).by(-1)
+        delete :destroy, params: {id: business_process.to_param}, session: valid_session
+      }.to change(BusinessProcess, :count).by(-1)
     end
 
-    it "redirects to the diagrams list" do
-      diagram = Diagram.create! valid_attributes
-      delete :destroy, params: {id: diagram.to_param}, session: valid_session
-      expect(response).to redirect_to(diagrams_url)
+    it "redirects to the business_processes list" do
+      business_process = BusinessProcess.create! valid_attributes
+      delete :destroy, params: {id: business_process.to_param}, session: valid_session
+      expect(response).to redirect_to(business_processes_url)
     end
   end
 

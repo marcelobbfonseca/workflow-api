@@ -1,0 +1,27 @@
+<%= form_with(model: business_process, local: true) do |form| %>
+  <% if business_process.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business_process.errors.count, "error") %> prohibited this business_process from being saved:</h2>
+
+      <ul>
+      <% business_process.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :business_process_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :task_id %>
+    <%= form.text_field :task_id, id: :business_process_task_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,2 +1,0 @@
-class Diagram < ApplicationRecord
-end
