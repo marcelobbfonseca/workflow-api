@@ -1,7 +1,7 @@
 class BpmnController < ApplicationController
   before_action :set_user_tasks, only: [:parser]
   before_action :set_bpmn, only: [:parser]
-  before_action :escape, only:[:parser]
+  before_action :escape, only:[:parser], if: "params['name']"
   rescue_from  Errno::ENOENT, with: :file_not_found
 
   def modeler
@@ -54,10 +54,6 @@ class BpmnController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def bpmn_params
-    params.require(:bpmn).permit(:name, :process, :userTask)
-  end
-
   def escape
     @name = params[:name].gsub(/[^0-9A-Za-z]/, '')
   end
