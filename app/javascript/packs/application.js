@@ -10,25 +10,14 @@
 // import * as helpers from 'path/file'
 // import MyJsFile from 'my_js_file';
 
-import $ from 'jquery'
+//import $ from 'jquery'
 import Bpmn from 'bpmn-js'
 //import ModelerIndex from 'bpmn_stuff/modeler_index.js';
 
 console.log('Hello World from webpacker')
 
 'use strict';
-
-function readFileSync (filename, arg2) {
-    if ( arg2 === void 0 ) arg2 = {};
-
-    var options = normalizeOptions(arg2, null, 'r', null);
-    var flag = FileFlag.getFileFlag(options.flag);
-    if (!flag.isReadable()) {
-        throw new ApiError(ErrorCode.EINVAL, 'Flag passed to readFile must allow for reading.');
-    }
-    return assertRoot(this.root).readFileSync(normalizePath(filename), options.encoding, flag);
-}
-
+var $ = require('jquery');
 var BpmnModeler = require('bpmn-js/lib/Modeler');
 
 var container = $('#js-drop-zone');
@@ -38,7 +27,19 @@ var canvas = $('#js-canvas');
 var modeler = new BpmnModeler({ container: canvas });
 
 //var newDiagramXML = fs.readFileSync(__dirname + '/../resources/newDiagram.bpmn', 'utf-8');
-var newDiagramXML = 'bpmn-js/resources/initial.bpmn'; //falha aqui. nao reconhece func
+var newDiagramXML = '<?xml version="1.0" encoding="UTF-8"?>\n'+
+'<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" targetNamespace="http://bpmn.io/schema/bpmn" id="Definitions_1">\n'+
+'  <bpmn:process id="Process_1" isExecutable="false">\n'+
+'    <bpmn:startEvent id="StartEvent_1"/>\n'+
+'  </bpmn:process>\n' +
+'  <bpmndi:BPMNDiagram id="BPMNDiagram_1">\n' +
+'    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">\n' +
+'      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">\n' +
+'        <dc:Bounds height="36.0" width="36.0" x="173.0" y="102.0"/>\n' +
+'      </bpmndi:BPMNShape>\n' +
+'    </bpmndi:BPMNPlane>\n' +
+'  </bpmndi:BPMNDiagram>' +
+'</bpmn:definitions>';
 
 
 
@@ -125,7 +126,7 @@ if (!window.FileList || !window.FileReader) {
 
 // bootstrap diagram functions
 
-$(document).on('ready', function() {
+//$(document).on('ready', function() {
 
     $('#js-create-diagram').click(function(e) {
         e.stopPropagation();
@@ -171,5 +172,5 @@ $(document).on('ready', function() {
     }, 500);
 
     modeler.on('commandStack.changed', exportArtifacts);
-});
+//});
 
