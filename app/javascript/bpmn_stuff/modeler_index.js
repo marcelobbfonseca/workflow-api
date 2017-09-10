@@ -1,11 +1,18 @@
 'use strict';
 
-//import $ from 'jquery';
-//import BpmnModeler from 'bpmn-js/lib/Modeler';
-//import fs from 'graceful-fs';
+function readFileSync (filename, arg2) {
+    if ( arg2 === void 0 ) arg2 = {};
+
+    var options = normalizeOptions(arg2, null, 'r', null);
+    var flag = FileFlag.getFileFlag(options.flag);
+    if (!flag.isReadable()) {
+        throw new ApiError(ErrorCode.EINVAL, 'Flag passed to readFile must allow for reading.');
+    }
+    return assertRoot(this.root).readFileSync(normalizePath(filename), options.encoding, flag);
+}
 
 var $ = require('jquery'), BpmnModeler = require('bpmn-js/lib/Modeler');
-var fs = require('browserfs'); //nao ta pegando a ref certa
+//var fs = require('browserfs'); //nao ta pegando a ref certa
 
 var container = $('#js-drop-zone');
 
@@ -14,7 +21,9 @@ var canvas = $('#js-canvas');
 var modeler = new BpmnModeler({ container: canvas });
 
 //var newDiagramXML = fs.readFileSync(__dirname + '/../resources/newDiagram.bpmn', 'utf-8');
-var newDiagramXML = fs.readFileSync('bpmn-js/resources/initial.bpmn', 'utf-8'); //falha aqui. nao reconhece func
+var newDiagramXML = 'bpmn-js/resources/initial.bpmn'; //falha aqui. nao reconhece func
+
+
 
 function createNewDiagram() {
     openDiagram(newDiagramXML);
@@ -99,8 +108,9 @@ if (!window.FileList || !window.FileReader) {
 // bootstrap diagram functions
 
 $(document).on('ready', function() {
-
+    console.log('entrou 0.0');
     $('#js-create-diagram').click(function(e) {
+        console.log('entrou 0');
         e.stopPropagation();
         e.preventDefault();
 
