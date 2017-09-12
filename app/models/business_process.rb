@@ -8,7 +8,7 @@ class BusinessProcess < ApplicationRecord
 
 
   def clean_new_line
-    name.gsub(/\n/, '')
+    self.name = name.gsub(/\n/, '')
   end
 
 end

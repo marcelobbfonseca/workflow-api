@@ -70,10 +70,10 @@ class BpmnController < ApplicationController
       node.xpath('//bpmn:lane').each do |lane|   #bug
         puts lane['name'] # Lane.create(name: lane['name'])
         Lane.create(business_process: BusinessProcess.last, name: lane['name'])
-        lane.xpath('//bpmn:flowNodeRef').each do |lane_task|
-
+        lane.text.split(' ').each do |lane_task|
+          byebug
           # puts "Nodo de #{lane['name']} : #{lane_task.text}"
-          task = Task.create(xml_id: lane_task.text, lane_id: Lane.last.id )
+          task = Task.create(xml_id: lane_task, lane_id: Lane.last.id )
           render json:{message: task.errors} unless task.save
         end
       end
