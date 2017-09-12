@@ -5,4 +5,13 @@ class Task < ApplicationRecord
 
   enum category: [:startEvent, :userTask, :task, :exclusiveGateway, :endEvent]
 
+  rails_admin do
+    object_label_method do
+      :get_name
+    end
+  end
+
+  def get_name
+    self.content
+  end
 end
