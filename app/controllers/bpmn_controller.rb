@@ -25,15 +25,15 @@ class BpmnController < ApplicationController
     process = doc.xpath('//bpmn:process')
     process.children.each do |node|
 
-      puts "node: #{node}"
+      #puts "node: #{node}"
       identify_and_create(node)
-
     end
 
-    respond_to do |format|
-        format.html { render :index, notice: 'Business process was successfully created.' }
-        format.json { render :show, status: :created }
-    end
+    render json: {message: 'Business process was successfully created.'}, status: :created
+    #respond_to do |format|
+    #    format.html { render :index, notice: 'Business process was successfully created.' }
+    #    format.json { render :show, status: :created }
+    #end
 
   end
 
@@ -67,29 +67,31 @@ class BpmnController < ApplicationController
 
     if node.name.eql? 'laneSet'
 
-      node.xpath('//bpmn:lane').each do |lane|
+      node.xpath('//bpmn:lane').each do |lane|   #bug
         puts lane['name'] # Lane.create(name: lane['name'])
         Lane.create(business_process: BusinessProcess.last, name: lane['name'])
         lane.xpath('//bpmn:flowNodeRef').each do |lane_task|
 
-          puts "Nodo de #{lane['name']} : #{lane_task.text}"
+          # puts "Nodo de #{lane['name']} : #{lane_task.text}"
           task = Task.create(xml_id: lane_task.text, lane_id: Lane.last.id )
-          render json: task.errors unless task.save
+          render json:{message: task.errors} unless task.save
         end
       end
 
-    elsif node.name.eql? 'SequenceFlow'
-
-      source = Task.first_or_create(xml_id: node['sourceRef'])
-      target = Task.first_or_create(xml_id: node['targetRef'])
-      sequence = SequenceFlow.first_or_create(xml_id: node['id'],source: source, target: target)
-      render json: task.errors unless sequence.save
+    elsif node.name.eql? 'sequenceFlow'
+      byebug
+      source = Task.find_by_xml_id(node['sourceRef'])
+      target = Task.find_by_xml_id(node['targetRef'])
+      sequence = SequenceFlow.find_or_initialize_by(xml_id: node['id'])
+      sequence.source = source
+      sequence.target = target
+      render json: {message: sequence.errors} unless sequence.save
     else
 
-      # Node.find_or_initialize(xml_id: ,category: node.name , content: node['name'])
-      # Node.save
-      task = Task.first_or_create(xml_id:node['id'],category: node.name , content: node['name'])
-      render json: task.errors unless task.save
+      task = Task.find_by_xml_id(node['id'])
+      task.category = node.name
+      task.content = node['name']
+      render json: {message:task.errors} unless task.save
 
     end
 
