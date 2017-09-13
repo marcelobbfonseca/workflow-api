@@ -12,11 +12,15 @@
 
 //import $ from 'jquery'
 import Bpmn from 'bpmn-js'
+import BPMN_Moddle from 'bpmn-moddle'
+import Diagram_Js from 'diagram-js'
+
 //import ModelerIndex from 'bpmn_stuff/modeler_index.js';
 
 console.log('Hello World from webpacker')
 
 'use strict';
+
 var $ = require('jquery');
 var BpmnModeler = require('bpmn-js/lib/Modeler');
 
