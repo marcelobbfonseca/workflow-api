@@ -11,9 +11,16 @@
 // import MyJsFile from 'my_js_file';
 
 //import $ from 'jquery'
-import Bpmn from 'bpmn-js'
-import BPMN_Moddle from 'bpmn-moddle'
-import Diagram_Js from 'diagram-js'
+import 'bpmn-js'
+import 'diagram-js'
+import 'bpmn-moddle'
+
+
+import 'bootstrap/dist/css/bootstrap'
+import 'bootstrap/dist/css/bootstrap-theme'
+//import 'bpmn-js/assets/bpmn-font/bpmn'
+//import 'bpmn-js/assets/bpmn-font/bpmn-embedded'
+//import 'diagram-js/assets/diagram-js'
 
 //import ModelerIndex from 'bpmn_stuff/modeler_index.js';
 
