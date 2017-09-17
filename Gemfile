@@ -63,3 +63,6 @@ gem 'devise'
 gem 'rails_admin', '~> 1.2'
 
 gem 'webpacker'
+
+# The authorization Gem for Ruby on Rails.
+gem 'cancancan', '~> 2.0'
