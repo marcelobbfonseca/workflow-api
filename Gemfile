@@ -66,3 +66,6 @@ gem 'webpacker'
 
 # The authorization Gem for Ruby on Rails.
 gem 'cancancan', '~> 2.0'
+
+# provides a simple and extremely flexible way to upload files from Ruby applications
+gem 'carrierwave', '~> 1.0'
