@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @sequence_flow.target %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @sequence_flow.source %>
+</p>
+
+<%= link_to 'Edit', edit_sequence_flow_path(@sequence_flow) %> |
+<%= link_to 'Back', sequence_flows_path %>

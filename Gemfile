@@ -9,7 +9,10 @@ ruby '2.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+
+gem 'mysql2'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -38,6 +41,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.6.0'
+  gem 'factory_girl_rails', '~> 4.8.0'
+
 end
 
 group :development do
@@ -51,3 +57,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
+# RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data.
+gem 'rails_admin', '~> 1.2'
+
+gem 'webpacker'
+
+# The authorization Gem for Ruby on Rails.
+gem 'cancancan', '~> 2.0'

@@ -1,0 +1,2 @@
+export default { bpmn: true }
+

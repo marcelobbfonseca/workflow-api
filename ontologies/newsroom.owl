@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#"
+     xml:base="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#apresenta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#apresenta">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#repórter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pauta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#aprova -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#aprova">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#editor-chefe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#matéria"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pauta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#apura -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#apura">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#repórter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#notícia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#corrige -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#corrige">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#repórter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#matéria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pré-apura -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pré-apura">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#repórter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#notícia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#redige -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#redige">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#repórter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#matéria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#revisa -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#revisa">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#editor-chefe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#matéria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#submete -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#submete">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#editor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#gerente-de-midias"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#redes-sociais"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#site"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#canal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#canal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#editor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#editor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-redação"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#editor-chefe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#editor-chefe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-redação"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-acadêmica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-acadêmica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-redação -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-redação">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#estudante -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#estudante">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-acadêmica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#ferramenta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#ferramenta"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#foto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#foto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#gerente-de-midias -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#gerente-de-midias">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-redação"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#infográfico -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#infográfico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#joomla -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#joomla">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#ferramenta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#jornal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#jornal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#jornal-impresso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#jornal-impresso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#canal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#matéria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#matéria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#notícia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#notícia">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pauta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pauta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pessoa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pessoa"/>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#professor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#professor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-acadêmica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#redes-sociais -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#redes-sociais">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#canal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#repórter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#repórter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-redação"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#rádio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#rádio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#canal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#site -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#site">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#canal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#televisão -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#televisão">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#canal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#trello -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#trello">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#ferramenta"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-acadêmica"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#ferramenta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#entidade-redação"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#ferramenta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#material"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#joomla"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#pauta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#site"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcelo/ontologies/2017/8/rewsroom-ontology-5#trello"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ontologies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Path name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ontologies.each do |ontology| %>
+      <tr>
+        <td><%= ontology.path_name %></td>
+        <td><%= link_to 'Show', ontology %></td>
+        <td><%= link_to 'Edit', edit_ontology_path(ontology) %></td>
+        <td><%= link_to 'Destroy', ontology, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ontology', new_ontology_path %>

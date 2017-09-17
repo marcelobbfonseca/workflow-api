@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "^3.0.0",
+    "bootstrap": "^3.3.7",
+    "bpmn-js": "^0.22.0",
+    "bpmn-moddle": "^0.14.0",
+    "browserfs": "^1.4.3",
+    "diagram-js": "^0.21.1",
+    "jquery": "^3.2.1",
+    "matches-selector": "^1.2.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.7.1"
+  },
+  "scripts": {
+    "dev": "./bin/webpack-dev-server"
+  }
+}

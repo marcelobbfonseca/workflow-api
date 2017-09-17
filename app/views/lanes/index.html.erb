@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lanes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lanes.each do |lane| %>
+      <tr>
+        <td><%= lane.name %></td>
+        <td><%= link_to 'Show', lane %></td>
+        <td><%= link_to 'Edit', edit_lane_path(lane) %></td>
+        <td><%= link_to 'Destroy', lane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lane', new_lane_path %>

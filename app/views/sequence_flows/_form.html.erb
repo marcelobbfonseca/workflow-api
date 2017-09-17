@@ -1,0 +1,27 @@
+<%= form_with(model: sequence_flow, local: true) do |form| %>
+  <% if sequence_flow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sequence_flow.errors.count, "error") %> prohibited this sequence_flow from being saved:</h2>
+
+      <ul>
+      <% sequence_flow.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :target %>
+    <%= form.number_field :target, id: :sequence_flow_target %>
+  </div>
+
+  <div class="field">
+    <%= form.label :source %>
+    <%= form.number_field :source, id: :sequence_flow_source %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

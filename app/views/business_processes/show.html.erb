@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @business_process.name %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @business_process.task %>
+</p>
+
+<%= link_to 'Edit', edit_business_process_path(@business_process) %> |
+<%= link_to 'Back', business_processes_path %>

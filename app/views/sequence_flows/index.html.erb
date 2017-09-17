@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sequence Flows</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Target</th>
+      <th>Source</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sequence_flows.each do |sequence_flow| %>
+      <tr>
+        <td><%= sequence_flow.target %></td>
+        <td><%= sequence_flow.source %></td>
+        <td><%= link_to 'Show', sequence_flow %></td>
+        <td><%= link_to 'Edit', edit_sequence_flow_path(sequence_flow) %></td>
+        <td><%= link_to 'Destroy', sequence_flow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sequence Flow', new_sequence_flow_path %>
