@@ -1,0 +1,22 @@
+<%= form_with(model: ontology, local: true) do |form| %>
+  <% if ontology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ontology.errors.count, "error") %> prohibited this ontology from being saved:</h2>
+
+      <ul>
+      <% ontology.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :path_name %>
+    <%= form.text_field :path_name, id: :ontology_path_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

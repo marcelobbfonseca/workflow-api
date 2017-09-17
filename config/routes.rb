@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ontologies
   resources :lanes
   resources :business_processes
   get '/bpmn/modeler' => 'bpmn#modeler'
