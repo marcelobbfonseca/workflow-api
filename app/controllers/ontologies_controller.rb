@@ -1,5 +1,6 @@
 class OntologiesController < ApplicationController
   before_action :set_ontology, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /ontologies
   # GET /ontologies.json

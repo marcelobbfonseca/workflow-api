@@ -1,5 +1,6 @@
 class BusinessProcessesController < ApplicationController
   before_action :set_business_process, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /business_processes
   # GET /business_processes.json

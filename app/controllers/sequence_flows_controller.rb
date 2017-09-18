@@ -1,5 +1,6 @@
 class SequenceFlowsController < ApplicationController
   before_action :set_sequence_flow, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /sequence_flows
   # GET /sequence_flows.json

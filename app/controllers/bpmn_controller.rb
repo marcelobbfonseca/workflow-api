@@ -5,12 +5,12 @@ class BpmnController < ApplicationController
   rescue_from  Errno::ENOENT, with: :file_not_found
   include BpmnHelper
 
+  # bpmn-js modeler
   def modeler
-
   end
 
+  # bpmn-js viewer
   def viewer
-
   end
 
   # GET /bpmn/create
@@ -31,6 +31,7 @@ class BpmnController < ApplicationController
 
   end
 
+  # will parse a bpmn file and return usertasks and process name for SparQL using nokogiri
   def parser
     doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/processo_noticia.bpmn")) if @name.nil?
     doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/#{@name}.bpmn")) unless @name.nil?
