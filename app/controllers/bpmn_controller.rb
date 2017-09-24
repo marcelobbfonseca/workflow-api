@@ -1,9 +1,11 @@
 class BpmnController < ApplicationController
+  #before_action :authenticate_user!
   before_action :set_user_tasks, only: [:parser]
   before_action :set_bpmn, only: [:parser]
   before_action :escape, only:[:parser, :create], if: "params['name']"
   rescue_from  Errno::ENOENT, with: :file_not_found
   include BpmnHelper
+  include BpmnDirFileHandler
 
   # bpmn-js modeler
   def modeler
@@ -20,6 +22,7 @@ class BpmnController < ApplicationController
 
     # Get process name
     business_process = BusinessProcess.create(name: doc.xpath('//bpmn:participant').first['name'])
+    render json:{message: business_process.errors}  if business_process.errors.any?
 
     # Get process nodes, identify and create. Process lanes, lane nodes and sequence flows.
     process = doc.xpath('//bpmn:process')
@@ -66,8 +69,7 @@ class BpmnController < ApplicationController
   end
 
   def file_not_found
-    dir_files = Dir.entries("#{Rails.root}/bpmn/")
-    render json: {message: "Process #{@name} not found. Existing files:#{dir_files}"}, status: :not_found
+    render json: {message: "Process #{@name} not found. Existing files:#{bpmn_files}"}, status: :not_found
   end
 
   def process_name(doc)

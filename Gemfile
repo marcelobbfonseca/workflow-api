@@ -69,3 +69,12 @@ gem 'cancancan', '~> 2.0'
 
 # provides a simple and extremely flexible way to upload files from Ruby applications
 gem 'carrierwave', '~> 1.0'
+
+#  a pure-Ruby library for working with Resource Description Framework (RDF) data. Dependencie for gem sparql
+gem 'rdf'
+
+# Ruby SPARQL library
+gem 'sparql'
+
+# http request helper. Makes http fun again!
+gem 'httparty'

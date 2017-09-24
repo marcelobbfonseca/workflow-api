@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   resources :ontologies
+  get 'ontologies/:id/query', to: 'ontologies#sparql_query', as: 'sparql'
+
   resources :lanes
   resources :business_processes
   get '/bpmn/modeler' => 'bpmn#modeler'

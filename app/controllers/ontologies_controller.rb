@@ -1,6 +1,9 @@
 class OntologiesController < ApplicationController
-  before_action :set_ontology, only: [:show, :edit, :update, :destroy]
+  before_action :set_ontology, only: [:show, :edit, :update, :destroy, :sparql_query]
+  before_action :authenticate_user!
   load_and_authorize_resource
+
+  include BpmnDirFileHandler
 
   # GET /ontologies
   # GET /ontologies.json
@@ -62,6 +65,22 @@ class OntologiesController < ApplicationController
     end
   end
 
+
+  def sparql_query
+    byebug
+    response = HTTParty.get("http://localhost:3000/bpmn/parser.json?name=#{params[:bpmn_name]}")
+    response = JSON.parse(response.body)
+
+    # sparql query
+    response[1]['userTask'].each do |userTask|
+      remove_new_line(userTask)
+      #sparql query on @ontology and concat result
+
+    end
+    # show result.
+    # check for role problems, unless something wrong. notify then create new bpmn.
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ontology
@@ -70,6 +89,6 @@ class OntologiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ontology_params
-      params.require(:ontology).permit(:path_name)
+      params.require(:ontology).permit(:path_name, :name)
     end
 end
