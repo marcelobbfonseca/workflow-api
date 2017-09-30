@@ -78,3 +78,5 @@ gem 'sparql'
 
 # http request helper. Makes http fun again!
 gem 'httparty'
+
+gem 'linkeddata'

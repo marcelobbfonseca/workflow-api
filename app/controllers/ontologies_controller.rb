@@ -2,6 +2,7 @@ class OntologiesController < ApplicationController
   before_action :set_ontology, only: [:show, :edit, :update, :destroy, :sparql_query]
   before_action :authenticate_user!
   load_and_authorize_resource
+  skip_before_action :verify_authenticity_token
 
   include BpmnDirFileHandler
 
@@ -65,18 +66,36 @@ class OntologiesController < ApplicationController
     end
   end
 
-
+ # POST
   def sparql_query
-    byebug
-    response = HTTParty.get("http://localhost:3000/bpmn/parser.json?name=#{params[:bpmn_name]}")
+    #rodar outro servidor em outra porta pro httparty funfar
+    response = HTTParty.get("http://localhost:3005/bpmn/parser.json?name=#{params[:bpmn_name]}", {timeout: 10})
     response = JSON.parse(response.body)
+    byebug
 
-    # sparql query
+    file = @ontology.path_name.path
+    queryable = RDF::Repository.load(file)
+    sse = SPARQL.parse("PREFIX uni: <http://www.workflow-api.herokuapp.com/ontologies/university#>
+                        SELECT *
+                        WHERE { ?s uni:OWLObjectProperty_studies ?o }"
+                        )
+    result = queryable.query(sse)
+    render html: { sparql_result: result.to_tsv }
+
+    # usertask sparql query
+
     response[1]['userTask'].each do |userTask|
       remove_new_line(userTask)
-      #sparql query on @ontology and concat result
-
+#      predicate, object = usertask.split(' ')
+#      sse = SPARQL.parse("SELECT ?s WHERE { ?s ?p \"Harvey\" }")
+      sse = SPARQL.parse("SELECT ?s WHERE { ?s ?#{predicate} ?#{object} }")
+      result = queryable.query(sse)
+#      queryable.query(sse) do |result|
+#        result.inspect
+#        end
+#
     end
+
     # show result.
     # check for role problems, unless something wrong. notify then create new bpmn.
   end
