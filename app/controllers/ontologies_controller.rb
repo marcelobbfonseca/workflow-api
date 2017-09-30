@@ -1,7 +1,7 @@
 class OntologiesController < ApplicationController
   before_action :set_ontology, only: [:show, :edit, :update, :destroy, :sparql_query]
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  before_action :authenticate_user!, only: [:show, :create, :edit, :update, :destroy]
+  #load_and_authorize_resource
   skip_before_action :verify_authenticity_token
 
   include BpmnDirFileHandler
@@ -66,9 +66,9 @@ class OntologiesController < ApplicationController
     end
   end
 
- # POST
+ # POST ontologies/1
   def sparql_query
-    #rodar outro servidor em outra porta pro httparty funfar
+    # to work on local host, run another server on port 3005 for request to work.
     response = HTTParty.get("http://localhost:3005/bpmn/parser.json?name=#{params[:bpmn_name]}", {timeout: 10})
     response = JSON.parse(response.body)
     byebug
@@ -89,7 +89,7 @@ class OntologiesController < ApplicationController
 #      predicate, object = usertask.split(' ')
 #      sse = SPARQL.parse("SELECT ?s WHERE { ?s ?p \"Harvey\" }")
       sse = SPARQL.parse("SELECT ?s WHERE { ?s ?#{predicate} ?#{object} }")
-      result = queryable.query(sse)
+      result = queryable.query(sse).first
 #      queryable.query(sse) do |result|
 #        result.inspect
 #        end
