@@ -5,6 +5,7 @@ class OntologiesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   include BpmnDirFileHandler
+  include SparqlModule
 
   # GET /ontologies
   # GET /ontologies.json
@@ -68,35 +69,17 @@ class OntologiesController < ApplicationController
 
  # POST ontologies/1
   def sparql_query
-    # to work on local host, run another server on port 3005 for request to work.
-    response = HTTParty.get("http://localhost:3005/bpmn/parser.json?name=#{params[:bpmn_name]}", {timeout: 10})
+
+    #response = "[{\"process\":\"produção da notícia web\n\"},{\"userTask\":[\"pré-apura pauta\n\",\"apresenta Pauta\n\",\"apura pauta\n\",\"redige matéria\n\",\"revisa matéria\n\"]}] "
+    response = HTTParty.get("http://localhost:3000/bpmn/parser.json?name=#{params[:bpmn_name]}", {timeout: 10})
     response = JSON.parse(response.body)
     byebug
 
-    file = @ontology.path_name.path
-    queryable = RDF::Repository.load(file)
-    sse = SPARQL.parse("PREFIX uni: <http://www.workflow-api.herokuapp.com/ontologies/university#>
-                        SELECT *
-                        WHERE { ?s uni:OWLObjectProperty_studies ?o }"
-                        )
-    result = queryable.query(sse)
-    render html: { sparql_result: result.to_tsv }
-
     # usertask sparql query
-
-    response[1]['userTask'].each do |userTask|
-      remove_new_line(userTask)
-#      predicate, object = usertask.split(' ')
-#      sse = SPARQL.parse("SELECT ?s WHERE { ?s ?p \"Harvey\" }")
-      sse = SPARQL.parse("SELECT ?s WHERE { ?s ?#{predicate} ?#{object} }")
-      result = queryable.query(sse).first
-#      queryable.query(sse) do |result|
-#        result.inspect
-#        end
-#
-    end
+    result = user_task_sparql(@ontology.path_name.path, response)
 
     # show result.
+    render json: { message: result }, status: :ok
     # check for role problems, unless something wrong. notify then create new bpmn.
   end
 
@@ -108,6 +91,6 @@ class OntologiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ontology_params
-      params.require(:ontology).permit(:path_name, :name)
+      params.require(:ontology).permit(:path_name, :name, :prefix)
     end
 end

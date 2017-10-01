@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/bpmn/viewer' => 'bpmn#viewer'
   get '/bpmn/parser' => 'bpmn#parser'
   get '/bpmn/create' => 'bpmn#create'
-  post 'sparql' => 'ontologies#sparql_query'
+#  post 'sparql' => 'ontologies#sparql_query'
 
   resources :sequence_flows
   resources :tasks
