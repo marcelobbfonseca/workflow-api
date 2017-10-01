@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Diagrams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>File</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diagrams.each do |diagram| %>
+      <tr>
+        <td><%= diagram.name %></td>
+        <td><%= diagram.file %></td>
+        <td><%= diagram.image %></td>
+        <td><%= link_to 'Show', diagram %></td>
+        <td><%= link_to 'Edit', edit_diagram_path(diagram) %></td>
+        <td><%= link_to 'Destroy', diagram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Diagram', new_diagram_path %>

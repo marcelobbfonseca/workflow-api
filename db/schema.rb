@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930212822) do
+ActiveRecord::Schema.define(version: 20171001202257) do
 
   create_table "business_processes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.integer "current_task"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "diagram_id"
+    t.index ["diagram_id"], name: "index_business_processes_on_diagram_id"
+  end
+
+  create_table "diagrams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "file"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,6 +83,7 @@ ActiveRecord::Schema.define(version: 20170930212822) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "business_processes", "diagrams"
   add_foreign_key "lanes", "business_processes"
   add_foreign_key "tasks", "lanes"
 end

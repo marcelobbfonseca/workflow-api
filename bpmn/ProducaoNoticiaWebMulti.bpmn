@@ -56,7 +56,7 @@
       <bpmn:incoming>SequenceFlow_0nkytbt</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_04k1tnd</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Task_1a41b4z" name="apresenta Pauta&#10;">
+    <bpmn:userTask id="Task_1a41b4z" name="apresenta pauta&#10;">
       <bpmn:incoming>SequenceFlow_04k1tnd</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1mc4qlf</bpmn:outgoing>
     </bpmn:userTask>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :diagrams
   resources :ontologies
   get 'ontologies/:id/query', to: 'ontologies#sparql_query', as: 'sparql'
 

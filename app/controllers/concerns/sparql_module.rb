@@ -1,7 +1,6 @@
 module SparqlModule
   extended ActiveSupport::Concern
 
-
   #
   def remove_prefix(rdf_triple)
     rdf_triple.s.value.split('#')[1]
@@ -11,12 +10,14 @@ module SparqlModule
   def user_task_sparql(file, response)
     result = Array.new
     queryable = RDF::Repository.load(file)
-    response[1]['userTask'].each do |userTask|
-      remove_new_line(userTask)
-      predicate, object = usertask.split(' ')
+
+    response[1].stringify_keys['userTask'].each do |user_task|
+      user_task = remove_new_line(user_task)
+
+      predicate, object = user_task.split(' ')
       sse = SPARQL.parse("PREFIX news: <http://www.semanticweb.org/2017/multi-newsroom#>
                           SELECT *
-                          WHERE { ?s ?#{predicate} ?#{object} }")
+                          WHERE { ?s news:#{predicate} news:#{object} }")
       triple_result = queryable.query(sse).first
       subject = remove_prefix(triple_result)
 
@@ -24,10 +25,14 @@ module SparqlModule
     end
     result
   end
+
+
+
+
 end
 
 
-
+# Ontology.last.path_name.path
 #queryable = RDF::Repository.load(file)
 #sse = SPARQL.parse("PREFIX uni: <http://www.workflow-api.herokuapp.com/ontologies/university#>
 #                        SELECT *
