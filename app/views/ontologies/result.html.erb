@@ -1,5 +1,31 @@
-<h1>Sparql result</h1>
+<div class="row">
 
-<% @results.each do |result| %>
-  <p><%=result %> </p>
-<%end%>
+  <div class="jumbotron col-md-offset-1 col-md-10">
+    <h1 class="display-3">SparQL result</h1>
+      <table class="table table-bordered table-condensed table-hover">
+        <thead class="thead-inverse">
+        <tr>
+          <th>Suggestion table</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @results.each do |result| %>
+            <tr>
+              <td><%=result %></td>
+            </tr>
+        <%end%>
+        </tbody>
+      </table>
+    <hr class="my-4">
+    <p class="lead">
+      <a class="btn btn-primary btn-lg text-center" href="#" role="button">Apply changes?</a>
+    </p>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-off-2 col-md-10 text-center">
+    <%= image_tag(@diagram.image_url, class:"img-fluid img-thumbnail", alt:"Responsive image") %>
+  </div>
+</div>

@@ -10,18 +10,16 @@ module BpmnDirFileHandler
     name.gsub(/\n/, '')
   end
 
-  # temp
-
-  def parser_(name)
+  # returns array with user_tasks
+  def parser_
     bpmn = Array.new
     userTasks = Array.new
 
-    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/processo_noticia.bpmn")) if name.nil?
-    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/#{name}.bpmn")) unless name.nil?
+    doc = Nokogiri::XML(File.open(@diagram.file.path)) if @diagram.present?
+    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/processo_noticia.bpmn")) if @diagram.nil?
 
     # Get process name
     process = process_name_(doc)
-
 
     # Get all user tasks
     # task.content for xml content
@@ -35,6 +33,10 @@ module BpmnDirFileHandler
 
   def process_name_(doc)
     doc.css('bpmn|participant').first['name']
+  end
+
+  def escape_(name)
+    name.gsub(/[^0-9A-Za-z]/, '')
   end
 
 end

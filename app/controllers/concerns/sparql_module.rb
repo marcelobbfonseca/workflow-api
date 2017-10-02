@@ -21,7 +21,7 @@ module SparqlModule
       triple_result = queryable.query(sse).first
       subject = remove_prefix(triple_result)
 
-      result.push("Sujestão: #{subject} #{predicate} #{object} é o mais indicado.")
+      result.push("#{subject} #{predicate} #{object} é o mais indicado.")
     end
     result
   end

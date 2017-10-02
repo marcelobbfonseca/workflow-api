@@ -1,7 +1,7 @@
 class OntologiesController < ApplicationController
   before_action :set_ontology, only: [:show, :edit, :update, :destroy, :sparql_query]
   before_action :authenticate_user!, only: [:show, :create, :edit, :update, :destroy]
-  before_action :escape, only: [:sparql_query]
+  before_action :set_diagram, only: :sparql_query
   #load_and_authorize_resource
   skip_before_action :verify_authenticity_token
 
@@ -71,13 +71,10 @@ class OntologiesController < ApplicationController
  # POST ontologies/1
   def sparql_query
 
-    # response = HTTParty.get("http://localhost:3000/bpmn/parser.json?name=#{params[:bpmn_name]}", {timeout: 10})
-    # response = JSON.parse(response.body)
-    response = parser_(@name)
-
+    # returns array with user_tasks
+    response = parser_
     @results = user_task_sparql(@ontology.path_name.path, response)
 
-    # show result.
     render 'result'
   end
 
@@ -92,7 +89,8 @@ class OntologiesController < ApplicationController
       params.require(:ontology).permit(:path_name, :name, :prefix)
     end
 
-    def escape
-      @name = params[:bpmn_name].gsub(/[^0-9A-Za-z]/, '')
+    def set_diagram
+      name = escape_(params[:bpmn_name])
+      @diagram =Diagram.find_by_name(name)
     end
 end

@@ -1,5 +1,5 @@
 class BusinessProcessesController < ApplicationController
-  before_action :set_business_process, only: [:show, :edit, :update, :destroy]
+  before_action :set_business_process, only: [:edit, :update, :destroy]
   load_and_authorize_resource
 
   # GET /business_processes
@@ -11,6 +11,7 @@ class BusinessProcessesController < ApplicationController
   # GET /business_processes/1
   # GET /business_processes/1.json
   def show
+    @business_process = BusinessProcess.eager_load(lanes:[:tasks] ).find(params[:id])
   end
 
   # GET /business_processes/new
@@ -70,6 +71,6 @@ class BusinessProcessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_process_params
-      params.require(:business_process).permit(:name, :task_id)
+      params.require(:business_process).permit(:name, :current_task)
     end
 end
