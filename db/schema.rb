@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002134102) do
+ActiveRecord::Schema.define(version: 20171004134300) do
 
   create_table "business_processes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -61,7 +61,9 @@ ActiveRecord::Schema.define(version: 20171002134102) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "lane_id"
+    t.bigint "user_id"
     t.index ["lane_id"], name: "index_tasks_on_lane_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -86,4 +88,5 @@ ActiveRecord::Schema.define(version: 20171002134102) do
   add_foreign_key "business_processes", "diagrams"
   add_foreign_key "lanes", "business_processes"
   add_foreign_key "tasks", "lanes"
+  add_foreign_key "tasks", "users"
 end
