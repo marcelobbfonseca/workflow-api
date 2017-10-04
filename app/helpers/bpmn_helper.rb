@@ -16,8 +16,10 @@ module BpmnHelper
 
     elsif node.name.eql? 'sequenceFlow'
 
-      source = Task.find_by_xml_id(node['sourceRef'])
-      target = Task.find_by_xml_id(node['targetRef'])
+      #source = Task.find_by_xml_id(node['sourceRef'])
+      #target = Task.find_by_xml_id(node['targetRef'])
+      source = Task.where(xml_id: node['sourceRef']).last
+      target = Task.where(xml_id: node['targetRef']).last
       sequence = SequenceFlow.find_or_initialize_by(xml_id: node['id'])
       sequence.source = source
       sequence.target = target

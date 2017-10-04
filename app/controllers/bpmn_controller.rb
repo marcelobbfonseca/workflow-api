@@ -43,8 +43,7 @@ class BpmnController < ApplicationController
     @process = process_name(doc)
 
 
-    # Get all user tasks
-    # task.content for xml content
+    # Get all user tasks. Try task.content for xml content
     doc.css('bpmn|userTask').each do |task|
       @userTasks.push(task['name'])
     end

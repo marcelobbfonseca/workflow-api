@@ -71,6 +71,6 @@ class BusinessProcessesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_process_params
-      params.require(:business_process).permit(:name, :current_task)
+      params.require(:business_process).permit(:name, :current_task, :diagram_id)
     end
 end
