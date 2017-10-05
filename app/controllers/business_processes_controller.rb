@@ -11,7 +11,8 @@ class BusinessProcessesController < ApplicationController
   # GET /business_processes/1
   # GET /business_processes/1.json
   def show
-    @business_process = BusinessProcess.eager_load(lanes:[:tasks] ).find(params[:id])
+
+    @business_process = BusinessProcess.eager_load(lanes:[tasks: [:assignee]] ).find(params[:id])
   end
 
   # GET /business_processes/new

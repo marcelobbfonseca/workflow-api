@@ -32,7 +32,7 @@ module BpmnDirFileHandler
   end
 
   def process_name_(doc)
-    doc.css('bpmn|participant').first['name']
+    remove_new_line(doc.css('bpmn|participant').first['name'])
   end
 
   def escape_(name)

@@ -2,7 +2,7 @@ class BpmnController < ApplicationController
   #before_action :authenticate_user!
   before_action :set_user_tasks, only: [:parser]
   before_action :set_bpmn, only: [:parser]
-  before_action :escape, only:[:parser, :create], if: "params['name']"
+  before_action :set_diagram, only:[:parser, :create], if: "params['name']"
   rescue_from  Errno::ENOENT, with: :file_not_found
   include BpmnHelper
   include BpmnDirFileHandler
@@ -18,10 +18,11 @@ class BpmnController < ApplicationController
   # GET /bpmn/create
   # Create relational process from xml using nokogiri
   def create
-    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/processo_noticia.bpmn"))
+    doc = Nokogiri::XML(File.open(@diagram.file.path)) if @diagram.present?
+    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/processo_noticia.bpmn")) if @diagram.nil?
 
     # Get process name
-    business_process = BusinessProcess.create(name: doc.xpath('//bpmn:participant').first['name'])
+    business_process = BusinessProcess.create(name: process_name_(doc))
     render json:{message: business_process.errors}  if business_process.errors.any?
 
     # Get process nodes, identify and create. Process lanes, lane nodes and sequence flows.
@@ -36,20 +37,8 @@ class BpmnController < ApplicationController
 
   # will parse a bpmn file and return usertasks and process name for SparQL using nokogiri
   def parser
-    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/processo_noticia.bpmn")) if @name.nil?
-    doc = Nokogiri::XML(File.open("#{Rails.root}/bpmn/#{@name}.bpmn")) unless @name.nil?
+    @bpmn = parser_
 
-    # Get process name
-    @process = process_name(doc)
-
-
-    # Get all user tasks. Try task.content for xml content
-    doc.css('bpmn|userTask').each do |task|
-      @userTasks.push(task['name'])
-    end
-
-    # build bpmn query array
-    @bpmn.push(process: @process).push(userTask: @userTasks)
     respond_to do |format|
       format.json { render json: @bpmn }
       format.html { render json: @bpmn }
@@ -76,8 +65,10 @@ class BpmnController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def escape
-    @name = params[:name].gsub(/[^0-9A-Za-z]/, '')
+
+  def set_diagram
+    name = escape_(params[:name])
+    @diagram =Diagram.find_by_name(name)
   end
 
 end
