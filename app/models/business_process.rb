@@ -4,7 +4,7 @@ class BusinessProcess < ApplicationRecord
   belongs_to :diagram, inverse_of: :business_processes, dependent: :destroy, optional: true
   has_many :tasks, through: :lanes, dependent: :destroy
   before_create :set_first_process_task
-
+  before_update :update_current_task
 
 
 
@@ -18,4 +18,16 @@ class BusinessProcess < ApplicationRecord
     self.current_task = start_event
   end
 
+  def update_current_task
+
+    previous = self.current_task.previous_tasks.find_by_status(:started)
+    if previous.present?
+      previous.update(status: :completed)
+      self.current_task.update(status: :started)
+    else
+      byebug
+      throw :abort
+    end
+
+  end
 end

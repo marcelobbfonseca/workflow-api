@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   enum role: [:admin, :api_consumer, :reporter, :chief_editor ]
 
+  def assign_to
+    self.tasks.where(status: :started)
+  end
+
 end

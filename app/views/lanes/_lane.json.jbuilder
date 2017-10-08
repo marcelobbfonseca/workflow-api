@@ -5,6 +5,7 @@ if lane.tasks.present?
     json.id task.id
     json.content task.content
     json.assignee task.assignee
+    json.status task.status
     json.category task.category
   end
 
