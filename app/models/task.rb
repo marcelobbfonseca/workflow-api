@@ -3,10 +3,10 @@ class Task < ApplicationRecord
   belongs_to :assignee, class_name: 'User', foreign_key: 'user_id', inverse_of: :tasks, optional: true
 
   has_many :next_sequence_flows, class_name: 'SequenceFlow', foreign_key: 'source_id', inverse_of: 'source', dependent: :destroy
-  has_many :next_tasks, class_name: 'Task', through: :next_sequence_flows, source: :source
+  has_many :next_tasks, class_name: 'Task', through: :next_sequence_flows, source: :target
 
   has_many :previous_sequence_flows, class_name: 'SequenceFlow', foreign_key: 'target_id', inverse_of: 'target', dependent: :destroy
-  has_many :previous_tasks, class_name: 'Task', through: :previous_sequence_flows, source: :target
+  has_many :previous_tasks, class_name: 'Task', through: :previous_sequence_flows, source: :source
 
   before_create :set_inactive
   before_save :clean_new_line, if: Proc.new { self.content.present? }
