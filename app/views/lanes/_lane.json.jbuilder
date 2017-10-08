@@ -1,8 +1,11 @@
-json.extract! lane, :id, :name, :created_at, :updated_at
+json.extract! lane, :id, :name
 
 if lane.tasks.present?
-  json.tasks do
-    json.array! lane.tasks, partial: 'tasks/task', as: :task
+  json.tasks lane.tasks do |task|
+    json.id task.id
+    json.content task.content
+    json.assignee task.assignee
+    json.category task.category
   end
 
 end
