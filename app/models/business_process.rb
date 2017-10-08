@@ -25,7 +25,6 @@ class BusinessProcess < ApplicationRecord
       previous.update(status: :completed)
       self.current_task.update(status: :started)
     else
-      byebug
       throw :abort
     end
 
