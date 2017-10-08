@@ -1,6 +1,9 @@
 class BusinessProcessesController < ApplicationController
-  before_action :set_business_process, only: [:edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token # remover isto ao subir para prod.
   load_and_authorize_resource
+  skip_authorize_resource :only => :update # remover isto ao subir para prod.
+  before_action :set_task, if: 'params[:task_id]'
+  before_action :set_business_process, only: [:edit, :update, :destroy]
 
   # GET /business_processes
   # GET /business_processes.json
@@ -70,8 +73,12 @@ class BusinessProcessesController < ApplicationController
       @business_process = BusinessProcess.find(params[:id])
     end
 
+    def set_task
+      @task = Task.find(params[:task_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_process_params
-      params.require(:business_process).permit(:name, :current_task, :diagram_id)
+      params.require(:business_process).permit(:name, :current_task_id, :diagram_id, :task_id)
     end
 end
