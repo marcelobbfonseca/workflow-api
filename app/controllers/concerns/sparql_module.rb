@@ -3,6 +3,7 @@ module SparqlModule
 
   #
   def remove_prefix(rdf_triple)
+    raise 'rdf_triple is nil' if rdf_triple.nil?
     rdf_triple.s.value.split('#')[1]
   end
 
@@ -15,7 +16,7 @@ module SparqlModule
       user_task = remove_new_line(user_task)
 
       predicate, object = user_task.split(' ')
-      sse = SPARQL.parse("PREFIX news: <http://www.semanticweb.org/2017/multi-newsroom#>
+      sse = SPARQL.parse("PREFIX news: <http://semanticworkflow-api.herokuapp.com/multi-newsroom#>
                           SELECT *
                           WHERE { ?s news:#{predicate} news:#{object} }")
       triple_result = queryable.query(sse).first
