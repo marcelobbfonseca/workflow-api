@@ -16,7 +16,7 @@ module SparqlModule
       user_task = remove_new_line(user_task)
 
       predicate, object = user_task.split(' ')
-      sse = SPARQL.parse("PREFIX news: <http://semanticworkflow-api.herokuapp.com/multi-newsroom#>
+      sse = SPARQL.parse("PREFIX news: <#{@ontology.prefix}>
                           SELECT *
                           WHERE { ?s news:#{predicate} news:#{object} }")
       triple_result = queryable.query(sse).first
