@@ -40,7 +40,7 @@ Dependencies:
 * Yarn
 
  How to Use:
- 1. Start localhost server
+ # 1. Start localhost server
  
  		$ git clone https://github.com/marcelobbfonseca/workflow-api.git
 		$ cd workflow-api
@@ -54,7 +54,7 @@ Access server running on http://localhost:3000
 Modeling a new BPD with bpmn-js. Access http://localhost:3000/bpmn/modeler
 Save file and image localy in yor computer
 
-2.Create Business Process
+# 2.Create Business Process
 
 * Go to http://localhost:3000/admin
 * email: admin@admin.com password: 12344321
@@ -74,25 +74,25 @@ For our example we will be using ProducaoDaNoticia.bpmn file, so it will be like
 After that it should send a "Business Process Created." message.
 If you checkout your admin dashboard, there should be 1 new Business Process and all it's tasks and SequenceFlows created. 
 
-3.Assign user to a task
+# 3.Assign user to a task
 
 Still on admin dashboard click on Tasks ("http://localhost:3000/admin/task")
 Select the userTask pré-apura pauta to edit and assign user Aroldo, a reporter.
 
-4. Upload Ontology
-	On admin dashboard, go to Ontologies and select create.("http://localhost:3000/admin/ontology/new")
-	Create a new ontologies with:
-	File: On Ontologies directory, upload multi_newsroom.owl
-	prefix: http://semanticworkflow-api.herokuapp.com/multi-newsroom#
-	name: leave it blank.
+# 4. Upload Ontology
+On admin dashboard, go to Ontologies and select create.("http://localhost:3000/admin/ontology/new")
+Create a new ontologies with:
+	* File: On Ontologies directory, upload multi_newsroom.owl
+	* prefix: http://semanticworkflow-api.herokuapp.com/multi-newsroom#
+	* name: multi_newsroom
 
 The framework is now all setup.
-5. Automatic role suggestion
+# 5. Automatic role suggestion
 	Go to http://localhost:3000/ontologies view and select "show" on the ontology recently created.
 	Just like in step 2. type the diagram name on the form to search the most suitable usertasks role for the diagram's task's. It will make a SparQL querie in the ontology for each usertask on the diagram and show the result in an array.
 
 
-6. Endpoints
+# 6. Endpoints
 
  
  Get Busines Process and all lanes and tasks. 1 = BusinessProcess id
