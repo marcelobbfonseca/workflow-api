@@ -34,3 +34,26 @@ application up and running.
 * Deployment instructions
 
 * In progress: working on two endpoints for bpmn xml parsing and view for bpmn-js modeling. 
+
+Require MySQL
+
+ How to Use:
+ 1. Start localhost server
+ 	$ git clone https://github.com/marcelobbfonseca/workflow-api.git
+	$ cd workflow-api
+	$ bundle install
+	$ rails db:seed # add users admin, reporter and chief-editor
+	$ rails server
+	
+Access server running on http://localhost:3000
+
+Modeling a new BPD with bpmn-js. Access http://localhost:3000/bpmn/modeler
+Save file and image localy in yor computer
+
+Go to http://localhost:3000/admin
+
+Select Diagram
+Create new diagram using the file and image saved.
+
+
+	
