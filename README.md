@@ -94,11 +94,16 @@ The framework is now all setup.
 
 6. Endpoints
 
- GET http://localhost:3000/business_processes/1.json
+ 
  Get Busines Process and all lanes and tasks. 1 = BusinessProcess id
+	
+		GET http://localhost:3000/business_processes/1.json
 
- PUT http://localhost:3000/business_processes/5.json
+
  Update Business Process current task to a next task with current_task id=22 and BusinessProcess id=1.
+ 		
+		PUT http://localhost:3000/business_processes/5.json
+		
 
  		{
 			"business_process":{
@@ -107,10 +112,11 @@ The framework is now all setup.
 	
 		}
 
- GET localhost:3000/tasks/26.json
- Get task information and existing nexts tasks
  
- GET http://localhost:3000/bpmn/create.json?name=ProducaoNoticiaWebMulti
+ Get task information and existing nexts tasks
+ 	
+		GET localhost:3000/tasks/26.json
+	
  Creates a new Business with bpmn file name as params 
-
-
+ 
+		GET http://localhost:3000/bpmn/create.json?name=ProducaoNoticiaWebMulti
