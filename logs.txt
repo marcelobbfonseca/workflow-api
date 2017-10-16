@@ -1,8 +1,0 @@
-yarn run v0.27.5
-$ ./bin/webpack-dev-server
-
-Project is running at [1m[34mhttp://localhost:3035/[39m[22m
-webpack output is served from [1m[34m/packs/[39m[22m
-Content not from webpack is served from [1m[34m/home/marcelo/Documentos/projetos/tcc-pratico/workflow-backend/workflow-backend-project/public/packs[39m[22m
-404s will fallback to [1m[34m/index.html[39m[22m
-webpack: Failed to compile.
