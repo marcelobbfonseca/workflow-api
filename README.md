@@ -120,3 +120,7 @@ The framework is now all setup.
  Creates a new Business with bpmn file name as params 
  
 		GET http://localhost:3000/bpmn/create.json?name=ProducaoNoticiaWebMulti
+		
+Get user with id = 1 data and all his tasks assigned to.
+		
+		GET http://localhost:3000/users/1.json
