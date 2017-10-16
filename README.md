@@ -33,7 +33,7 @@ application up and running.
 
 * Deployment instructions
 
-* In progress: working on two endpoints for bpmn xml parsing and view for bpmn-js modeling. 
+* In progress
 
 Dependencies: 
 * MySQL
@@ -80,6 +80,7 @@ Still on admin dashboard click on Tasks ("http://localhost:3000/admin/task")
 Select the userTask pré-apura pauta to edit and assign user Aroldo, a reporter.
 
 # 4. Upload Ontology
+
 On admin dashboard, go to Ontologies and select create.("http://localhost:3000/admin/ontology/new")
 Create a new ontologies with:
 * File: On Ontologies directory, upload multi_newsroom.owl
@@ -88,12 +89,12 @@ Create a new ontologies with:
 
 The framework is now all setup.
 # 5. Automatic role suggestion
-	Go to http://localhost:3000/ontologies view and select "show" on the ontology recently created.
-	Just like in step 2. type the diagram name on the form to search the most suitable usertasks role for the diagram's task's. It will make a SparQL querie in the ontology for each usertask on the diagram and show the result in an array.
+
+Go to http://localhost:3000/ontologies view and select "show" on the ontology recently created.
+Just like in step 2. type the diagram name on the form to search the most suitable usertasks role for the diagram's task's. It will make a SparQL querie in the ontology for each usertask on the diagram and show the result in an array.
 
 
 # 6. Endpoints
-
  
  Get Busines Process and all lanes and tasks. 1 = BusinessProcess id
 	
