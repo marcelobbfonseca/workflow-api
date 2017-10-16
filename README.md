@@ -82,9 +82,9 @@ Select the userTask pré-apura pauta to edit and assign user Aroldo, a reporter.
 # 4. Upload Ontology
 On admin dashboard, go to Ontologies and select create.("http://localhost:3000/admin/ontology/new")
 Create a new ontologies with:
-	* File: On Ontologies directory, upload multi_newsroom.owl
-	* prefix: http://semanticworkflow-api.herokuapp.com/multi-newsroom#
-	* name: multi_newsroom
+* File: On Ontologies directory, upload multi_newsroom.owl
+* prefix: http://semanticworkflow-api.herokuapp.com/multi-newsroom#
+* name: multi_newsroom
 
 The framework is now all setup.
 # 5. Automatic role suggestion
