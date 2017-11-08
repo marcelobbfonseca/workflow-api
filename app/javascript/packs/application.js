@@ -18,8 +18,8 @@ import 'bpmn-moddle'
 
 import 'bootstrap/dist/css/bootstrap'
 import 'bootstrap/dist/css/bootstrap-theme'
-//import 'bpmn-js/assets/bpmn-font/bpmn'
-//import 'bpmn-js/assets/bpmn-font/bpmn-embedded'
+import 'bpmn-js/assets/bpmn-font/css/bpmn'
+import 'bpmn-js/assets/bpmn-font/css/bpmn-embedded'
 //import 'diagram-js/assets/diagram-js'
 
 //import ModelerIndex from 'bpmn_stuff/modeler_index.js';
