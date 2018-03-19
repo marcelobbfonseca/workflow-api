@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/2017/multi-newsroom#"
+     xml:base="http://www.semanticweb.org/2017/multi-newsroom"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:multi-newsroom="http://www.semanticweb.org/2017/multi-newsroom#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/2017/multi-newsroom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#apresenta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/2017/multi-newsroom#apresenta">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Reporter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Pauta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#apura -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/2017/multi-newsroom#apura">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Reporter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Pauta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#pré-apura -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/2017/multi-newsroom#pré-apura">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Reporter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Pauta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#redige -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/2017/multi-newsroom#redige">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Reporter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Matéria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#revisa -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/2017/multi-newsroom#revisa">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Editor-Chefe"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Matéria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#nome -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/2017/multi-newsroom#nome">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Material"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Editor-Chefe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Editor-Chefe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Pessoa"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Reporter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Material -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Material"/>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Matéria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Matéria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Material"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Pauta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Mídia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Mídia"/>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Pauta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Pauta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Pessoa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Pessoa"/>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Redes-Sociais -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Redes-Sociais">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Mídia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Reporter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Reporter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#Site -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Site">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Mídia"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#editor-chefe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/2017/multi-newsroom#editor-chefe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Editor-Chefe"/>
+        <revisa rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#matéria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#matéria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/2017/multi-newsroom#matéria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Matéria"/>
+        <pré-apura rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#pauta"/>
+        <nome>matéria da noticia</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#pauta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/2017/multi-newsroom#pauta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Pauta"/>
+        <nome>Pauta de noticia</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#reporter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/2017/multi-newsroom#reporter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Reporter"/>
+        <apresenta rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#pauta"/>
+        <apura rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#pauta"/>
+        <pré-apura rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#pauta"/>
+        <redige rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#matéria"/>
+        <nome>Harvey Smith</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/2017/multi-newsroom#site_de_noticias -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/2017/multi-newsroom#site_de_noticias">
+        <rdf:type rdf:resource="http://www.semanticweb.org/2017/multi-newsroom#Site"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Material"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Mídia"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/2017/multi-newsroom#Pessoa"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

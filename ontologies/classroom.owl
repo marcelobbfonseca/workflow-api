@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.workflow-api.herokuapp.com/ontologies/university#"
+     xml:base="http://www.workflow-api.herokuapp.com/ontologies/university"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:university="http://www.workflow-api.herokuapp.com/ontologies/university#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLObjectProperty_66416933_ea03_48bd_912f_485938ff785e -->
+
+    <owl:ObjectProperty rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLObjectProperty_66416933_ea03_48bd_912f_485938ff785e">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Lecturer"/>
+        <rdfs:range rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_module"/>
+        <rdfs:comment>teaches something</rdfs:comment>
+        <rdfs:label xml:lang="pt">teaches</rdfs:label>
+        <rdfs:label>teaches a model</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLObjectProperty_studies -->
+
+    <owl:ObjectProperty rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLObjectProperty_studies">
+        <rdfs:domain rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#Student"/>
+        <rdfs:range rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_module"/>
+        <rdfs:comment>studies something</rdfs:comment>
+        <rdfs:label xml:lang="pt">studies</rdfs:label>
+        <rdfs:label>studies a model</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLDataProperty_59ea8099_6741_4dbf_ac40_18aa59ba4ac8 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLDataProperty_59ea8099_6741_4dbf_ac40_18aa59ba4ac8">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Lecturer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="pt">staffID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLDataProperty_first_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLDataProperty_first_name">
+        <rdfs:domain rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">first_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19">
+        <rdfs:domain rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="pt">last_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLDataProperty_student_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLDataProperty_student_id">
+        <rdfs:domain rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#Student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="pt">studentID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#Student -->
+
+    <owl:Class rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#Student">
+        <rdfs:subClassOf rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Person"/>
+        <rdfs:comment>regular student</rdfs:comment>
+        <rdfs:label>School student</rdfs:label>
+        <rdfs:label xml:lang="pt">Student</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_module -->
+
+    <owl:Class rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_module">
+        <owl:disjointWith rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Person"/>
+        <rdfs:label xml:lang="pt">Module</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Lecturer -->
+
+    <owl:Class rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Lecturer">
+        <rdfs:subClassOf rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Person"/>
+        <rdfs:comment>Regular  school Lecturer</rdfs:comment>
+        <rdfs:label xml:lang="pt">Lecturer</rdfs:label>
+        <rdfs:label>school lecturer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Math_Module -->
+
+    <owl:Class rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Math_Module">
+        <rdfs:subClassOf rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_module"/>
+        <rdfs:label>Math</rdfs:label>
+        <rdfs:label xml:lang="pt">MathModule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Person -->
+
+    <owl:Class rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Person">
+        <rdfs:label xml:lang="pt">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_CS_Module -->
+
+    <owl:Class rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_CS_Module">
+        <rdfs:subClassOf rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_module"/>
+        <rdfs:label xml:lang="pt">CSModule</rdfs:label>
+        <rdfs:label>Ciencias sociais</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_Aroldo_Da_Silva -->
+
+    <owl:NamedIndividual rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_Aroldo_Da_Silva">
+        <rdf:type rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Lecturer"/>
+        <OWLObjectProperty_66416933_ea03_48bd_912f_485938ff785e rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_CS103"/>
+        <OWLObjectProperty_66416933_ea03_48bd_912f_485938ff785e rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_CS102"/>
+        <OWLDataProperty_59ea8099_6741_4dbf_ac40_18aa59ba4ac8 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</OWLDataProperty_59ea8099_6741_4dbf_ac40_18aa59ba4ac8>
+        <OWLDataProperty_first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aroldo</OWLDataProperty_first_name>
+        <OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Da Silva</OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19>
+        <rdfs:label xml:lang="pt">Lecturer_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_CS103 -->
+
+    <owl:NamedIndividual rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_CS103">
+        <rdf:type rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_CS_Module"/>
+        <rdfs:label xml:lang="pt">CS103</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_CS102 -->
+
+    <owl:NamedIndividual rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_CS102">
+        <rdf:type rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_CS_Module"/>
+        <rdfs:label xml:lang="pt">CS102</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#M201 -->
+
+    <owl:NamedIndividual rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#M201">
+        <rdf:type rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Math_Module"/>
+        <rdfs:label xml:lang="pt">M201</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#Lecturer_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#Lecturer_2">
+        <rdf:type rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Lecturer"/>
+        <OWLObjectProperty_66416933_ea03_48bd_912f_485938ff785e rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#M201"/>
+        <OWLObjectProperty_66416933_ea03_48bd_912f_485938ff785e rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#M204"/>
+        <OWLDataProperty_59ea8099_6741_4dbf_ac40_18aa59ba4ac8 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">542425</OWLDataProperty_59ea8099_6741_4dbf_ac40_18aa59ba4ac8>
+        <OWLDataProperty_first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lapis</OWLDataProperty_first_name>
+        <OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Da Silva</OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19>
+        <rdfs:label xml:lang="pt">Lecturer_2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#Student_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#Student_1">
+        <rdf:type rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#Student"/>
+        <OWLObjectProperty_studies rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_CS102"/>
+        <OWLObjectProperty_studies rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#M201"/>
+        <OWLDataProperty_first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harvey</OWLDataProperty_first_name>
+        <OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Birdman</OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19>
+        <OWLDataProperty_c8e22d5d_9a89_454e_ae5c_944307e55fe7 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">011</OWLDataProperty_c8e22d5d_9a89_454e_ae5c_944307e55fe7>
+        <rdfs:label xml:lang="pt">student_2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#M204 -->
+
+    <owl:NamedIndividual rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#M204">
+        <rdf:type rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Math_Module"/>
+        <rdfs:label xml:lang="pt">M204</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.workflow-api.herokuapp.com/ontologies/university#Student_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#Student_2">
+        <rdf:type rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#Student"/>
+        <OWLObjectProperty_studies rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#OWLNamedIndividual_CS102"/>
+        <OWLObjectProperty_studies rdf:resource="http://www.workflow-api.herokuapp.com/ontologies/university#M201"/>
+        <OWLDataProperty_first_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marcelo</OWLDataProperty_first_name>
+        <OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bulhões</OWLDataProperty_bf85d069_cdeb_4df9_9881_9b15759fde19>
+        <OWLDataProperty_c8e22d5d_9a89_454e_ae5c_944307e55fe7 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">301</OWLDataProperty_c8e22d5d_9a89_454e_ae5c_944307e55fe7>
+        <rdfs:label xml:lang="pt">Student_1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#Student"/>
+            <rdf:Description rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Lecturer"/>
+            <rdf:Description rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_Math_Module"/>
+            <rdf:Description rdf:about="http://www.workflow-api.herokuapp.com/ontologies/university#OWLClass_CS_Module"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
