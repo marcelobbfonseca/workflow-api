@@ -36,9 +36,11 @@ application up and running.
 * In progress
 
 Dependencies: 
-* MySQL
+* Ruby 2.3.3 
+* Ruby on Rails 5.1 +
+* MySQL 5.7
 * Yarn
-
+* Node 6.4.0 +
  How to Use:
  # 1. Start localhost server
  
