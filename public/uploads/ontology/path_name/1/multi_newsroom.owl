@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://semanticworkflow-api.herokuapp.com/multi-newsroom#"
+     xml:base="http://semanticworkflow-api.herokuapp.com/multi-newsroom"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:multi-newsroom="http://semanticworkflow-api.herokuapp.com/multi-newsroom#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#apresenta -->
+
+    <owl:ObjectProperty rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#apresenta">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Reporter"/>
+        <rdfs:range rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pauta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#apura -->
+
+    <owl:ObjectProperty rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#apura">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Reporter"/>
+        <rdfs:range rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pauta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#pré-apura -->
+
+    <owl:ObjectProperty rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#pré-apura">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Reporter"/>
+        <rdfs:range rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pauta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#redige -->
+
+    <owl:ObjectProperty rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#redige">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Reporter"/>
+        <rdfs:range rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Matéria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#revisa -->
+
+    <owl:ObjectProperty rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#revisa">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Editor-Chefe"/>
+        <rdfs:range rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Matéria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#nome -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#nome">
+        <rdfs:domain rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Material"/>
+        <rdfs:domain rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Editor-Chefe -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Editor-Chefe">
+        <rdfs:subClassOf rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pessoa"/>
+        <owl:disjointWith rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Reporter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Material -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Material"/>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Matéria -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Matéria">
+        <rdfs:subClassOf rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Material"/>
+        <owl:disjointWith rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pauta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Mídia -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Mídia"/>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pauta -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pauta">
+        <rdfs:subClassOf rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pessoa -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pessoa"/>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Redes-Sociais -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Redes-Sociais">
+        <rdfs:subClassOf rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Mídia"/>
+        <owl:disjointWith rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Site"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Reporter -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Reporter">
+        <rdfs:subClassOf rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#Site -->
+
+    <owl:Class rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Site">
+        <rdfs:subClassOf rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Mídia"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#editor-chefe -->
+
+    <owl:NamedIndividual rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#editor-chefe">
+        <rdf:type rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Editor-Chefe"/>
+        <revisa rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#matéria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#matéria -->
+
+    <owl:NamedIndividual rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#matéria">
+        <rdf:type rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Matéria"/>
+        <nome>matéria da noticia</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#pauta -->
+
+    <owl:NamedIndividual rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#pauta">
+        <rdf:type rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pauta"/>
+        <nome>Pauta de noticia</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#reporter -->
+
+    <owl:NamedIndividual rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#reporter">
+        <rdf:type rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Reporter"/>
+        <apresenta rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#pauta"/>
+        <apura rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#pauta"/>
+        <pré-apura rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#pauta"/>
+        <redige rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#matéria"/>
+        <nome>Harvey Smith</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://semanticworkflow-api.herokuapp.com/multi-newsroom#site_de_noticias -->
+
+    <owl:NamedIndividual rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#site_de_noticias">
+        <rdf:type rdf:resource="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Site"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Material"/>
+            <rdf:Description rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Mídia"/>
+            <rdf:Description rdf:about="http://semanticworkflow-api.herokuapp.com/multi-newsroom#Pessoa"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
