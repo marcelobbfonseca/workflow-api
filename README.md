@@ -1,5 +1,4 @@
-
-# README
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # workflow-api
 Building a BPMN workflow API for rails 5.1
