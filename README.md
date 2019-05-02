@@ -42,15 +42,19 @@ Dependencies:
 * Node 6.4.0 +
  How to Use:
  # 1. Start localhost server
- 
- 		$ git clone https://github.com/marcelobbfonseca/workflow-api.git
-		$ cd workflow-api
-		$ bundle install
+ ```
+ 	$ git clone https://github.com/marcelobbfonseca/workflow-api.git
+	$ cd workflow-api
+	$ bundle install
+```
+You will need to change MySQL ```username``` and ```password``` config in ```workflow-api/config/database.yml``` to your local MySQL credentials in your machine. The next step is to run database seed and start local server.
+```		
 		$ rails db:seed # add users admin, reporter and chief-editor
 		$ yarn  # run yarn to compile webpacker
 		$ rails server
-	
-Access server running on http://localhost:3000
+```
+
+Access server running in ```http://localhost:3000```
 
 Modeling a new BPD with bpmn-js. Access http://localhost:3000/bpmn/modeler
 Save file and image localy in yor computer
@@ -126,3 +130,6 @@ Just like in step 2. type the diagram name on the form to search the most suitab
 Get user with id = 1 data and all his tasks assigned to.
 		
 		GET http://localhost:3000/users/1.json
+		
+		
+If there's any trouble trying to run the project, create a new issue.
