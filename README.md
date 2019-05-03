@@ -1,9 +1,8 @@
 [![Depfu](https://badges.depfu.com/badges/162afd397ea7f132bc73bb87dbc689d0/status.svg)](https://depfu.com) [![Depfu](https://badges.depfu.com/badges/162afd397ea7f132bc73bb87dbc689d0/count.svg)](https://depfu.com/github/marcelobbfonseca/workflow-api?project_id=7786) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # semantic workflow-api
-This project is a BPMN workflow API for rails 5.1. The application comes with rails-admin interface
-and a view for BPMN modeling tool from bpmn-js. 
-The main goal of this app is to assist the diagram modeling with a domain ontology(.owl file extension). The ontology used for this app was made using PRÓTÉGÉ modeling tool and defines a few tasks inside a newsroom.
+This project is a semantic BPMN workflow API for rails 5.1 and a part of this [article](http://ceur-ws.org/Vol-2228/short4.pdf) . The application comes with rails-admin interface and a view for BPMN modeling tool from [bpmn-js](https://bpmn.io/toolkit/bpmn-js/). 
+The main goal of this app is to assist the diagram modeling with a domain ontology(.owl file extension). The ontology used for this app was made using [PRÓTÉGÉ](https://protege.stanford.edu/) modeling tool and defines a few tasks inside a newsroom.
 
 
 
