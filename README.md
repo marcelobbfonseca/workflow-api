@@ -1,14 +1,17 @@
 [![Depfu](https://badges.depfu.com/badges/162afd397ea7f132bc73bb87dbc689d0/status.svg)](https://depfu.com) [![Depfu](https://badges.depfu.com/badges/162afd397ea7f132bc73bb87dbc689d0/count.svg)](https://depfu.com/github/marcelobbfonseca/workflow-api?project_id=7786) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-# workflow-api
-Building a BPMN workflow API for rails 5.1
+# semantic workflow-api
+This project is a BPMN workflow API for rails 5.1. The application comes with rails-admin interface
+and a view for BPMN modeling tool from bpmn-js. 
+The main goal of this app is to assist the diagram modeling with a domain ontology(.owl file extension). The ontology used for this app was made using PRÓTÉGÉ modeling tool and defines a few tasks inside a newsroom.
+
+
 
 
 Application in progress.
-This README will document all necessary steps to get the
-application up and running.
 
-* Ruby version: 2.3.3
+
+* Ruby version: 2.5.0
 
 * Rails version: 5.1
 
@@ -102,34 +105,42 @@ Just like in step 2. type the diagram name on the form to search the most suitab
 # 6. Endpoints
  
  Get Busines Process and all lanes and tasks. 1 = BusinessProcess id
-	
+```	
 		GET http://localhost:3000/business_processes/1.json
-
+```
 
  Update Business Process current task to a next task with current_task id=22 and BusinessProcess id=1.
- 		
+
+ ```		
 		PUT http://localhost:3000/business_processes/5.json
 		
-
  		{
 			"business_process":{
 				"current_task_id": 22
 			}
 	
 		}
-
+```
  
  Get task information and existing nexts tasks
  	
+ ```		
 		GET localhost:3000/tasks/26.json
+ ```		
 	
  Creates a new Business with bpmn file name as params 
  
+ ```		
 		GET http://localhost:3000/bpmn/create.json?name=ProducaoNoticiaWebMulti
+ ```		
 		
 Get user with id = 1 data and all his tasks assigned to.
 		
+ ```		
 		GET http://localhost:3000/users/1.json
+ ```		
 		
 		
-If there's any trouble trying to run the project, create a new issue.
+
+
+### If there's any trouble trying to run the project, create a new issue.
