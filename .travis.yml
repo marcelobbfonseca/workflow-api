@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 2.5.0
+
+services:
+  - mysql
+
+
+before_script:
+  - gem install rails -v 5.1
+  - cp .env.travis .env
+  - bundle install
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake db:seed
+  - yarn add
+  - yarn run production
