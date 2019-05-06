@@ -5,10 +5,10 @@ rvm:
 services:
   - mysql
 
-before_install:
-  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('12344321') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
-  - sudo mysql_upgrade -u root -p12344321
-  - sudo service mysql restart
+# before_install:
+#   - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('12344321') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
+#   - sudo mysql_upgrade -u root -p12344321
+#   - sudo service mysql restart
 
 script:
   - gem install rails -v 5.1

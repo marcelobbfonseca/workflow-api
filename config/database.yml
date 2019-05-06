@@ -14,7 +14,6 @@ default: &default
 development:
   <<: *default
   username: root
-  password: 12344321
   database: workflow_development
 
 # Warning: The database defined as "test" will be erased and
@@ -23,7 +22,6 @@ development:
 test:
   <<: *default
   username: root
-  password: 12344321
   database: workflow_test
 
 production:
