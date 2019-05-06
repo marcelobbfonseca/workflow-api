@@ -10,7 +10,7 @@ before_install:
   - sudo mysql_upgrade -u root -p12344321
   - sudo service mysql restart
 
-before_script:
+script:
   - gem install rails -v 5.1
   - cp .env.travis .env
   - bundle install
