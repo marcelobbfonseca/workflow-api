@@ -1,51 +1,54 @@
+
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 [![Build Status](https://travis-ci.com/marcelobbfonseca/workflow-api.svg?branch=master)](https://travis-ci.com/marcelobbfonseca/workflow-api) [![Depfu](https://badges.depfu.com/badges/162afd397ea7f132bc73bb87dbc689d0/status.svg)](https://depfu.com) [![Depfu](https://badges.depfu.com/badges/162afd397ea7f132bc73bb87dbc689d0/count.svg)](https://depfu.com/github/marcelobbfonseca/workflow-api?project_id=7786) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # semantic workflow-api
 This project is a semantic BPMN workflow API for rails 5.1 and a part of this [article](http://ceur-ws.org/Vol-2228/short4.pdf) . The application comes with rails-admin interface and a view for BPMN modeling tool from [bpmn-js](https://bpmn.io/toolkit/bpmn-js/). 
-The main goal of this app is to assist the diagram modeling with a domain ontology(.owl file extension). The ontology used for this app was made using [PRÓTÉGÉ](https://protege.stanford.edu/) modeling tool and defines a few tasks inside a newsroom.
+The main goal of this app is to assist the diagram modeling with a domain ontology(.owl file extension). The ontology used for this app was made using [PRÓTÉGÉ](https://protege.stanford.edu/) modeling tool and defines a few tasks inside a newsroom. If theres no interest in using semantic tools, you can still use this project as a Workflow API for Ruby on Rails
 
 
 
 
 Application in progress.
 
+## Requirements
 
 * Ruby version: 2.5.0
 
+* Database: MySQL 5.7
+
 * Rails version: 5.1
 
-* OS: Linux Mint 17.3
 
-* Database: MySQL 5.7
-	
-	instalation:
-	https://www.howtoforge.com/tutorial/how-to-install-mysql-57-on-linux-centos-and-ubuntu/
+Ruby version can be correctly chosen by installing rvm or rbenv. MySQL also needs to be installed and running. After installing ruby and MySQL install rails.
+```
+	gem install rails -v 5.1
+```
 
+## Configuration
 
-* Configuration
-
-* adapter mysql2
+* mysql2 adapter 
 
 * Using webpacker for bpmn libraries
 
 * Will be using rspec for test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+* Services (Dockerfile will be added soon.)
 
 * Deployment instructions
 
 * In progress
 
 Dependencies: 
-* Ruby 2.3.3 
+* Ruby 2.5.0 
 * Ruby on Rails 5.1 +
 * MySQL 5.7
-* Yarn
+* Yarn or npm
 * Node 6.4.0 +
  How to Use:
  # 1. Start localhost server
- ```
- 	$ git clone https://github.com/marcelobbfonseca/workflow-api.git
+```
+	$ git clone https://github.com/marcelobbfonseca/workflow-api.git
 	$ cd workflow-api
 	$ bundle install
 ```
