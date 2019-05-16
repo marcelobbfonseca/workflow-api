@@ -9,7 +9,7 @@ The main goal of this app is to assist the diagram modeling with a domain ontolo
 
 
 
-### Aplication running in
+### preview running in
 https://semanticworkflow-api.herokuapp.com/ (maintenance)
 
 
