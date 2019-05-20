@@ -6,11 +6,10 @@
 This project is a semantic BPMN workflow API for rails 5.1 and a part of this [article](http://ceur-ws.org/Vol-2228/short4.pdf) . The application comes with rails-admin interface and a view for BPMN modeling tool from [bpmn-js](https://bpmn.io/toolkit/bpmn-js/). 
 The main goal of this app is to assist the diagram modeling with a domain ontology(.owl file extension). The ontology used for this app was made using [PRÓTÉGÉ](https://protege.stanford.edu/) modeling tool and defines a few tasks inside a newsroom. If theres no interest in using semantic tools, you can still use this project as a Workflow API for Ruby on Rails
 
-
-
-
 ### preview running in
 https://semanticworkflow-api.herokuapp.com/ (maintenance)
+
+![App architecture](https://i.ibb.co/3sMSH83/arquitetura-da-busca-semantica.png)
 
 
 ## Requirements
@@ -48,7 +47,7 @@ Dependencies:
 * Yarn or npm
 * Node 6.4.0 +
  How to Use:
- # 1. Start localhost server
+ ## 1. Start localhost server
 ```
 	$ git clone https://github.com/marcelobbfonseca/workflow-api.git
 	$ cd workflow-api
@@ -66,7 +65,7 @@ Access server running in ```http://localhost:3000```
 Modeling a new BPD with bpmn-js. Access http://localhost:3000/bpmn/modeler
 Save file and image localy in yor computer
 
-# 2.Create Business Process
+## 2.Create Business Process
 
 * Go to http://localhost:3000/admin
 * email: admin@admin.com password: 12344321
@@ -86,12 +85,12 @@ For our example we will be using ProducaoDaNoticia.bpmn file, so it will be like
 After that it should send a "Business Process Created." message.
 If you checkout your admin dashboard, there should be 1 new Business Process and all it's tasks and SequenceFlows created. 
 
-# 3.Assign user to a task
+## 3.Assign user to a task
 
 Still on admin dashboard click on Tasks ("http://localhost:3000/admin/task")
 Select the userTask pré-apura pauta to edit and assign user Aroldo, a reporter.
 
-# 4. Upload Ontology
+## 4. Upload Ontology
 
 On admin dashboard, go to Ontologies and select create.("http://localhost:3000/admin/ontology/new")
 Create a new ontologies with:
@@ -100,13 +99,13 @@ Create a new ontologies with:
 * name: multi_newsroom
 
 The framework is now all setup.
-# 5. Automatic role suggestion
+## 5. Automatic role suggestion
 
 Go to http://localhost:3000/ontologies view and select "show" on the ontology recently created.
 Just like in step 2. type the diagram name on the form to search the most suitable usertasks role for the diagram's task's. It will make a SparQL querie in the ontology for each usertask on the diagram and show the result in an array.
 
 
-# 6. Endpoints
+## 6. Endpoints
  
  Get Busines Process and all lanes and tasks. 1 = BusinessProcess id
 ```	
@@ -146,5 +145,7 @@ Get user with id = 1 data and all his tasks assigned to.
 		
 		
 
+## Database tables
+![Database tables](https://i.ibb.co/dmkS5jK/tcc-mysqlworkbench.png)
 
 ### If there's any trouble trying to run the project, create a new issue.
