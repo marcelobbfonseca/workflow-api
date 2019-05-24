@@ -55,6 +55,8 @@ Dependencies:
 ```
 You will need to change MySQL ```username``` and ```password``` config in ```workflow-api/config/database.yml``` to your local MySQL credentials in your machine. The next step is to run database seed and start local server.
 ```		
+		$ rails db:create 
+		$ rails db:migrate 
 		$ rails db:seed # add users admin, reporter and chief-editor
 		$ yarn  # run yarn to compile webpacker
 		$ rails server
@@ -113,8 +115,7 @@ Just like in step 2. type the diagram name on the form to search the most suitab
 ```
 
  Update Business Process current task to a next task with current_task id=22 and BusinessProcess id=1.
-
- ```		
+```		
 		PUT http://localhost:3000/business_processes/5.json
 		
  		{
@@ -125,27 +126,24 @@ Just like in step 2. type the diagram name on the form to search the most suitab
 		}
 ```
  
- Get task information and existing nexts tasks
- 	
+ Get task information and existing nexts tasks.
  ```		
-		GET localhost:3000/tasks/26.json
- ```		
-	
- Creates a new Business with bpmn file name as params 
- 
- ```		
-		GET http://localhost:3000/bpmn/create.json?name=ProducaoNoticiaWebMulti
- ```		
-		
-Get user with id = 1 data and all his tasks assigned to.
-		
- ```		
-		GET http://localhost:3000/users/1.json
- ```		
-		
-		
+	GET localhost:3000/tasks/26.json
+ ```
 
-## Database tables
+Creates a new Business with bpmn file name as params 
+ ```		
+	GET http://localhost:3000/bpmn/create.json?name=ProducaoNoticiaWebMulti
+ ```
+	
+Get user with id = 1 data and all his tasks assigned to.
+```		
+	GET http://localhost:3000/users/1.json
+```
+
+
+
+## Project Database schema
 ![Database tables](https://i.ibb.co/dmkS5jK/tcc-mysqlworkbench.png)
 
 ### If there's any trouble trying to run the project, create a new issue.
