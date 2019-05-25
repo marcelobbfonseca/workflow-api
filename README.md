@@ -11,10 +11,32 @@ https://semanticworkflow-api.herokuapp.com/ (maintenance)
 
 ![App architecture](https://i.ibb.co/3sMSH83/arquitetura-da-busca-semantica.png)
 
+# Setting up local development environment
+You can setup the project locally installing all requirements or by using docker. Running project with docker containers are a much easier setup and bellow is a step-by-step for both.
 
-## Requirements
+## Setup with Docker
+If you dont have docker installed, create a dockerhub account and follow the instructions to [download/Install](https://www.docker.com/get-started) Docker for your current OS.
 
-* Ruby version: 2.5.0
+### Running project
+Run app and database containers
+```
+docker-compose up -d sql_db
+docker-compose up web_api
+```
+
+run migration command inside web_api container
+```
+docker-compose exec web_api bash
+> rails db:migrate
+```
+access application running in localhost:3000
+
+## Setup with without docker
+
+
+# Requirements
+
+* Ruby version: 2.5.3
 
 * Database: MySQL 5.7
 
@@ -26,22 +48,8 @@ Ruby version can be correctly chosen by installing rvm or rbenv. MySQL also need
 	gem install rails -v 5.1
 ```
 
-## Configuration
-
-* mysql2 adapter 
-
-* Using webpacker for bpmn libraries
-
-* Will be using rspec for test suite
-
-* Services (Dockerfile will be added soon.)
-
-* Deployment instructions
-
-* In progress
-
 Dependencies: 
-* Ruby 2.5.0 
+* Ruby 2.3.3 +
 * Ruby on Rails 5.1 +
 * MySQL 5.7
 * Yarn or npm
@@ -53,7 +61,7 @@ Dependencies:
 	$ cd workflow-api
 	$ bundle install
 ```
-You will need to change MySQL ```username``` and ```password``` config in ```workflow-api/config/database.yml``` to your local MySQL credentials in your machine. The next step is to run database seed and start local server.
+You will need to change MySQL ```username``` and ```password``` config in ```workflow-api/config/database.yml``` to your local MySQL credentials in your machine and remove ```host```. The next step is to run database seed and start local server.
 ```		
 		$ rails db:seed # add users admin, reporter and chief-editor
 		$ yarn  # run yarn to compile webpacker
@@ -129,23 +137,22 @@ Just like in step 2. type the diagram name on the form to search the most suitab
  	
  ```		
 		GET localhost:3000/tasks/26.json
- ```		
-	
+ ```
+
  Creates a new Business with bpmn file name as params 
  
  ```		
 		GET http://localhost:3000/bpmn/create.json?name=ProducaoNoticiaWebMulti
- ```		
-		
+ ```
+
 Get user with id = 1 data and all his tasks assigned to.
 		
  ```		
 		GET http://localhost:3000/users/1.json
- ```		
-		
-		
+ ```
 
-## Database tables
+
+## Database schema
 ![Database tables](https://i.ibb.co/dmkS5jK/tcc-mysqlworkbench.png)
 
 ### If there's any trouble trying to run the project, create a new issue.
