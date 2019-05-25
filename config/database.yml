@@ -15,6 +15,9 @@ development:
   <<: *default
   username: root
   database: workflow_development
+  password: secret123
+  host: semanticworkflow-api_sql_db_1
+  port: 3306
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,8 +25,11 @@ development:
 test:
   <<: *default
   username: root
+  password: secret123
   database: workflow_test
-
+  host: semanticworkflow-api_sql_db_1
+  port: 3306
+  
 production:
   <<: *default
   username: <%= ENV['DB_USERNAME'] %>

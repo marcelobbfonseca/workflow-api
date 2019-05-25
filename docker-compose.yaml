@@ -1,0 +1,37 @@
+version: '3'
+services:
+    web_api:
+        container_name: web_api_container
+        build: .
+        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        volumes:
+           - .:/app # for development only 
+        ports:
+            - "3000:3000"
+        depends_on:
+            - sql_db
+        #     - webpacker
+        links:
+            - sql_db
+    sql_db:
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: secret123
+            MYSQL_DATABASE: workflow_development
+            MYSQL_USER: root
+            MYSQL_PASSWORD: secret123
+        restart: on-failure
+        ports:
+            - '3306:3306'
+        expose:
+            - '3306'
+        volumes:
+            - ./mysql_data:/var/lib/mysql
+
+    # webpacker:
+    #     build: .
+    #     command: bundle exec bin/webpack-dev-server
+    #     volumes:
+    #         - .:/webpacker-example-app
+    #     ports:
+    #         - "8080:8080"

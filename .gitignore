@@ -25,3 +25,9 @@
 /public/uploads
 /node_modules
 authorized_keys
+
+#docker mysql volume
+mysql_data/
+
+#VS code file
+.DS_Store
