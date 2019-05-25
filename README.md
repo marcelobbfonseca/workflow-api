@@ -7,7 +7,7 @@ This project is a semantic BPMN workflow API for rails 5.1 and a part of this [a
 The main goal of this app is to assist the diagram modeling with a domain ontology(.owl file extension). The ontology used for this app was made using [PRÓTÉGÉ](https://protege.stanford.edu/) modeling tool and defines a few tasks inside a newsroom. If theres no interest in using semantic tools, you can still use this project as a Workflow API for Ruby on Rails
 
 ### preview running in
-https://semanticworkflow-api.herokuapp.com/ (maintenance)
+https://semanticworkflow-api.herokuapp.com/
 
 ![App architecture](https://i.ibb.co/3sMSH83/arquitetura-da-busca-semantica.png)
 
