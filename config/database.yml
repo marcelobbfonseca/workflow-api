@@ -14,9 +14,9 @@ default: &default
 development:
   <<: *default
   username: root
-  database: workflow_development
-  password: secret123
-  host: semanticworkflow-api_sql_db_1
+  database: <%= ENV['DB_NAME'] %> 
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
   port: 3306
 
 # Warning: The database defined as "test" will be erased and
@@ -25,7 +25,7 @@ development:
 test:
   <<: *default
   username: root
-  password: secret123
+  password: <%= ENV['DB_PASSWORD'] %>
   database: workflow_test
   host: <%= ENV['DB_HOST'] %>
   port: 3306
