@@ -27,7 +27,7 @@ test:
   username: root
   password: secret123
   database: workflow_test
-  host: semanticworkflow-api_sql_db_1
+  host: <%= ENV['DB_HOST'] %>
   port: 3306
   
 production:
