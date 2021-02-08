@@ -68,7 +68,7 @@ gem 'webpacker'
 gem 'cancancan', '~> 2.0'
 
 # provides a simple and extremely flexible way to upload files from Ruby applications
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 
 #  a pure-Ruby library for working with Resource Description Framework (RDF) data. Dependencie for gem sparql
 gem 'rdf'
