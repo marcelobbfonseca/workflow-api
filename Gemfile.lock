@@ -179,7 +179,8 @@ GEM
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     public_suffix (3.0.0)
-    puma (3.12.4)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     rack (2.0.8)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
@@ -387,7 +388,7 @@ DEPENDENCIES
   linkeddata
   listen (~> 3.0.5)
   mysql2 (~> 0.5.2)
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 5.1)
   rails_admin (~> 1.2)
   rdf
