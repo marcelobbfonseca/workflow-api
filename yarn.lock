@@ -1459,6 +1459,10 @@ css-unit-converter@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/css-unit-converter/-/css-unit-converter-1.1.1.tgz#d9b9281adcfd8ced935bdbaba83786897f64e996"
 
+css.escape@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
+
 css@^2.0.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/css/-/css-2.2.1.tgz#73a4c81de85db664d4ee674f7d47085e3b2d55dc"
@@ -1625,7 +1629,7 @@ diagram-js-origin@^0.15.2:
   dependencies:
     tiny-svg "^0.1.0"
 
-diagram-js@^0.21.0, diagram-js@^0.21.1:
+diagram-js@^0.21.0:
   version "0.21.1"
   resolved "https://registry.yarnpkg.com/diagram-js/-/diagram-js-0.21.1.tgz#57276cc60fcf0afa1e68758b847e9e81a2e0f798"
   dependencies:
@@ -1637,9 +1641,27 @@ diagram-js@^0.21.0, diagram-js@^0.21.1:
     object-refs "^0.1.1"
     tiny-svg "^0.1.1"
 
+diagram-js@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/diagram-js/-/diagram-js-2.6.2.tgz#b44ed72d4db6734dead9819ba51a09fdbda51f5f"
+  dependencies:
+    css.escape "^1.5.1"
+    didi "^4.0.0"
+    hammerjs "^2.0.1"
+    inherits "^2.0.1"
+    min-dash "^3.0.0"
+    min-dom "^3.0.0"
+    object-refs "^0.3.0"
+    path-intersection "^1.0.2"
+    tiny-svg "^2.0.0"
+
 didi@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/didi/-/didi-0.1.1.tgz#686e44691b9ca52bab1b89c3c66a8174b3249864"
+
+didi@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/didi/-/didi-4.0.0.tgz#2b89d892a67fd3777f7642d3bf06697b69e9b622"
 
 diffie-hellman@^5.0.0:
   version "5.0.2"
@@ -3069,6 +3091,10 @@ mimic-fn@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.1.0.tgz#e667783d92e89dbd342818b5230b9d62a672ad18"
 
+min-dash@^3.0.0:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/min-dash/-/min-dash-3.5.2.tgz#23786fa289116ba3656038e16511577413d27200"
+
 min-dom@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/min-dom/-/min-dom-0.2.0.tgz#7f1a3f8ac85c05adee7b3f40e00c52803075cd5d"
@@ -3080,6 +3106,15 @@ min-dom@^0.2.0:
     component-matches-selector "^0.1.5"
     component-query "^0.0.3"
     domify "^1.3.1"
+
+min-dom@^3.0.0:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/min-dom/-/min-dom-3.1.3.tgz#6d3f4092439c80d13df52ac98d6a7d5fe92bfdbd"
+  dependencies:
+    component-event "^0.1.4"
+    domify "^1.3.1"
+    indexof "0.0.1"
+    matches-selector "^1.2.0"
 
 minimalistic-assert@^1.0.0:
   version "1.0.0"
@@ -3325,6 +3360,10 @@ object-refs@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/object-refs/-/object-refs-0.1.1.tgz#353f75da633ea846a61ef0df04ec6ba941f86fc4"
 
+object-refs@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/object-refs/-/object-refs-0.3.0.tgz#934f4f0fb6b409e78be15fa60f616108aed63786"
+
 object.omit@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/object.omit/-/object.omit-2.0.1.tgz#1a9c744829f39dbb858c76ca3579ae2a54ebd1fa"
@@ -3474,6 +3513,10 @@ path-exists@^2.0.0:
 path-exists@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-3.0.0.tgz#ce0ebeaa5f78cb18925ea7d810d7b59b010fd515"
+
+path-intersection@^1.0.2:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/path-intersection/-/path-intersection-1.1.1.tgz#a1185ebae7cd9f6d86fd299533c3f7c638a01559"
 
 path-is-absolute@^1.0.0, path-is-absolute@^1.0.1:
   version "1.0.1"
@@ -4973,6 +5016,10 @@ tiny-stack@^0.1.0:
 tiny-svg@^0.1.0, tiny-svg@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/tiny-svg/-/tiny-svg-0.1.1.tgz#185c8eaf70875432fdff98dc1790a9bfaf65feab"
+
+tiny-svg@^2.0.0:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/tiny-svg/-/tiny-svg-2.2.2.tgz#9d9825c2e0ccb5e259bb1ae7d7ac79194e086657"
 
 to-arraybuffer@^1.0.0:
   version "1.0.1"
