@@ -6,7 +6,7 @@
     "bpmn-moddle": "^0.14.0",
     "browserfs": "^1.4.3",
     "diagram-js": "^0.21.1",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "matches-selector": "^1.2.0"
   },
   "devDependencies": {
